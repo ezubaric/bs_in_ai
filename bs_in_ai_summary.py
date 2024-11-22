@@ -1,4 +1,4 @@
-
+import math
 import pandas
 from pandas import DataFrame
 from toposort import toposort
@@ -13,19 +13,22 @@ def extract_dependencies_and_sort(graph: Dict[str, Union[str, Iterable[str]]]) -
         temp_graph[ii] = graph[ii]["Dependencies"]
 
     result = list(toposort(temp_graph))
-    result[0] = ('ROOT', [])
+    result[0] = set(['ROOT'])
     return result
 
-def create_graphviz(dependency: Dict[str, Iterable[str]], meta: Dict[str, Iterable[str]], name='', output=''):
+def create_graphviz(meta: Dict[str, Iterable[str]], name='', output=''):
     dot = graphviz.Digraph(comment=name)
 
-    for node in dependency:
-        dot.node(node, meta[node]['Label'])
+    for node in meta:
+        label = meta[node]['Pretty Label']
+        
+        assert isinstance(label, str), "Bad label for %s: %s" % (node, label)
+        dot.node(node, label)
 
-        for parent in dependency[node]:
-            dot.edges([node, parent])
+        for parent in meta[node]['Dependencies']:
+            dot.edge(parent, node)
 
-    dot.write("%s.dot" % output)
+    print(dot.source)
     dot.render(output)
                            
 
@@ -36,6 +39,11 @@ def dependency_graph_from_df(courses_df: DataFrame) -> Dict[str, Union[str, Iter
 
     for values in [values for row, values in courses_df.iterrows() if values["ID"]]:
         id = values["ID"]
+
+        if str(id) == "nan":
+            continue
+
+        print("Adding course %s" % id)
 
         graph[id] = values
         if isinstance(values["Dependencies"], float):
@@ -55,5 +63,5 @@ if __name__ == "__main__":
             raw = pandas.read_csv(infile)
             meta = dependency_graph_from_df(raw)
             topo = extract_dependencies_and_sort(meta)
-            create_graphviz(topo, meta, output=file)
+            create_graphviz(meta, output=file)
     
