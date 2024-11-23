@@ -1,4 +1,4 @@
-Skill,Satisfying Course,Title,Status,IncludeInSchedule,Description,Notes,Prereqs
+Skill,Course,Title,Status,IncludeInSchedule,Description,Notes,Prereqs
 Programming1,CMSC 141,,Refocus,YES,"This course is an introduction to computing and programming through the lens of data. It aims to give you ways of thinking about solving problems using computation. Students will learn to write programs to process both tabular and structured data, to assess programs both experimentally and theoretically, to apply basic data science concepts, and to discuss big ideas around the communication, use, and social impacts of digital information.",https://dcic-world.org/2022-01-25/index.html,
 Programming2,CMSC 142,,Refocus,YES,"This course explains the concepts and techniques required to write programs that can handle large amounts of data efficiently. Project-oriented and classroom-tested, it presents a number of important algorithms—supported by motivating examples—that bring meaning to the problems faced by computer programmers. The idea of computational complexity is introduced, demonstrating what can and cannot be computed efficiently at scale, helping programmers make informed judgements about the algorithms they use. ",https://kentdlee.github.io/CS2Plus/build/html/index.html,"CMSC141,CMSC131"
 ,,,,,,,
@@ -45,4 +45,23 @@ Introsem,AI 101,The Current AI Moment,"New,Shared",,"This course introduces stud
 ,,,,,,,
 ,,,,,,,
 Gofai,AI 221,Classical AI Algorithms,New,,"This course introduces the foundation of AI theory and practice.  Students learn how to search over structured representations to find optimal solutions to planning problems, how to represent real-world problems in graph structures or game trees, and how to represent and solve AI problems using first-order logic.","This course covers much of the same content as 421.  Students would have the option of taking either (and we'd share this course with the BA).  However, it wouldn't be as difficult (or as deep as) 421.  Students wouldn't be able to get credit for both.",
-Gofai,CMSC 421,,Existing,,"Introduces a range of ideas and methods in AI, varying semester to semester but chosen largely from: automated heuristic search, planning, games, knowledge representation, logical and statistical inference, learning, natural language processing, vision, robotics, cognitive modeling, and intelligent agents. Programming projects will help students obtain a hands-on feel for various topics.",,Prerequisite: Minimum grade of C- in CMSC351 and CMSC330; and permission of CMNS-Computer Science department. 
+Gofai,CMSC 421,,Existing,,"Introduces a range of ideas and methods in AI, varying semester to semester but chosen largely from: automated heuristic search, planning, games, knowledge representation, logical and statistical inference, learning, natural language processing, vision, robotics, cognitive modeling, and intelligent agents. Programming projects will help students obtain a hands-on feel for various topics.","This seems fine to maintain as is, given 221 is another option.",Prerequisite: Minimum grade of C- in CMSC351 and CMSC330; and permission of CMNS-Computer Science department. 
+,,,,,,,
+,,,,,,,
+GenAIRequired,BSAI 270,Multilingual Text Processing,New,YES,"This course covers the representation and manipulation of linguistic data on computers.  After establishing the fundamentals of byte-level representation and how different languages are represented on a computer, the course discusses the type / token distinction of word use and how this is reflected in computational representations of language and how this is complicated by languages with implicit or ambiguous tokenization.  Finally, the course ends with a review of the lexicosemantic resources available for the words languges.",,
+GenAIRequired,LING 200,Introductory Linguistics,Existing,YES,,,
+GenAIRequired,LING 240,Language and Mind,Existing,YES,,,
+GenAIRequired,LING 311,Syntax I,Existing,YES,,,
+GenAIRequired,LING 410,Grammar and Meaning,Existing,YES,,,
+GenAIRequired,BSAI 429,Multimodal Generation,New,YES,,,
+GenAIRequired,CMSC 470,Natural Language Processing,Existing,YES,,,
+GenAIRequired,BSAI 479,AI Evaluation and Application,New,YES,"While other courses cover the construction and fundamentals of core AI methods, many of these models already exist.  This course covers the application of large models and resources to novel tasks or in novel combinations: how to adapt existing resources to new tasks, how to evaluate how well the models perform, and how to efficiently adapt models to these tasks.  ","In 2024, this would look like adaptation (LoRA), prompting, using offline models vs. APIs, etc.  Obviously the course description needs to be more general so that it doesn't get too stale.",
+,,,,,,,
+GenAIElective,CMSC 426,Computer Vision,Existing,YES,,,
+GenAIElective,CMSC 427,Computer Graphics,Existing,YES,,,
+GenAIElective,LING 320,Phonetics,Existing,,,,
+GenAIElective,LING 321,Phonology I,Existing,,,,
+GenAIElective,LING 322,Phonology II,Existing,,,,
+GenAIElective,LING 330,Historical Linguistics,Existing,,,,
+GenAIElective,JAPN 412,Foreign language > 300 Level,Existing,YES,,,
+GenAIElective,JAPN 407,Foreign language > 300 Level,Existing,YES,,,
