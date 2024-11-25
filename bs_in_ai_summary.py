@@ -61,38 +61,74 @@ def compute_priorities(requirements):
 
     return priority
 
-def create_schedule(topological_sort, prerequisites, priorities, course_descriptions, courses_per_time=3):
+
+def create_course_sequence(topological_sort, prerequisites, priorities, topics, courses):
+    """
+    Convert a sequence of topics into a sequence of courses.
+    """
 
     non_prioritized = []
     for equivalence_set in topological_sort:
         non_prioritized += equivalence_set
 
     courses = defaultdict(list)
-    added = set()
+    topics_added = set()
+    course_sequence = []
+    
+    candidates = [x for x in non_prioritized if x not in topics_added]
+    while len(candidates) != 0:
+        candidates = [x for x in non_prioritized if x not in topics_added]
+    
+        valid_topics = [x for x in priorities if x in candidates and set(prerequisites[x]) - topics_added == set()]
 
-    time = 1
-    for time in range(8):
-        while len(courses[time]) < courses_per_time:
-            candidates = [x for x in non_prioritized if x not in added]
-            print(time, candidates)
-
-            if len(candidates) == 0:
-                break
-
-            valid_courses = [x for x in priorities if x in candidates and set(prerequisites[x]) - added == set()]
-
-            if False:
-                max_priority = max(priorities[x] for x in valid_courses)
+        if False:
+            max_priority = max(priorities[x] for x in valid_courses)
             
-                course_to_add = [x for x in priorities if priorities[x] == max_priority][0]
-            else:
-                
-                course_to_add = candidates[0]
+            topic_to_add = [x for x in priorities if priorities[x] == max_priority][0]
+        else:
+            topic_to_add = candidates[0]
 
-            courses[time] += [course_to_add]
-            added.add(course_to_add)
+        # Find out how many courses this topic has
+        if topic_to_add == 'ROOT':
+            topics_added.add(topic_to_add)
+            continue
+
+        requirement = int(topics[topics['ID']==topic_to_add]['Requirement'].iloc[0])
+
+
+        # Get those courses
+        candidates = courses[courses["Skill"]==topic_to_add][courses["IncludeInSchedule"]=="YES"]
+
+        assert len(candidates) >= requirement, "Not enough courses to satisfy topic %s" % topic_to_add
+        courses_to_add = list(candidates["Course"])
+        if len(candidates) > requirement:
+            courses_to_add = random.sample(courses_to_add, requirement)
+
+        topics_added.add(topic_to_add)
+        course_sequence += courses_to_add
+
+    return course_sequence
+
+
+def check_course_prereq(prereqs, history, concurrent):
+    return True
+
+def create_course_schedule(course_sequence, course_descriptions, courses_per_time=3):
+
+    courses = defaultdict(list)
+
+    for idx, course in enumerate(course_sequence):
+        courses[idx // courses_per_time].append(course)
+
+    history = []
+    for time in courses:
+        for course in courses[time]:
+            prereqs = list(course_descriptions[course_descriptions["Course"]==course]["Prereqs"])
+            assert len(prereqs) == 1, "Multiple entries for %s" % course
+            prereqs = prereqs[0]
             
-        courses[time]
+            assert check_course_prereq(prereqs, history, courses[time])
+        history += courses[time]
 
     return courses
 
@@ -124,23 +160,30 @@ def dependency_graph_from_df(courses_df: DataFrame, graph: Dict[str, Dict[str, I
     return graph
 
 if __name__ == "__main__":
-    file = "core"
-    with open("course_source/%s.csv" % file) as infile:
-        raw = pandas.read_csv(infile)
-        meta = dependency_graph_from_df(raw)
-        topo = extract_dependencies_and_sort(meta)
+    with open("course_source/core.csv") as infile:
+        raw_topics = pandas.read_csv(infile)
 
-        prerequisites = {}
-        for ii in meta:
-            prerequisites[ii] = gather_prerequisites(meta, ii)
+    with open("course_source/courses.csv") as infile:
+        raw_courses = pandas.read_csv(infile)
 
-        print("Prerequisites", prerequisites)
-        priorities = compute_priorities(prerequisites)
+    
+    meta = dependency_graph_from_df(raw_topics)
+    topo = extract_dependencies_and_sort(meta)
 
-        print("Priorities", priorities)
+    prerequisites = {}
+    for ii in meta:
+        prerequisites[ii] = gather_prerequisites(meta, ii)
 
-        schedule = create_schedule(topo, prerequisites, priorities, meta)
-        print("Schedule", schedule)
+    print("Prerequisites", prerequisites)
+    priorities = compute_priorities(prerequisites)
 
-        create_graphviz(meta, output=file)
+    print("Priorities", priorities)
+
+    course_sequence = create_course_sequence(topo, prerequisites, priorities, raw_topics, raw_courses)
+    print("Sequence", course_sequence)
+    
+    course_schedule = create_course_schedule(course_sequence, raw_courses)
+    print("Schedule", course_schedule)
+
+    create_graphviz(meta, output=file)
     
