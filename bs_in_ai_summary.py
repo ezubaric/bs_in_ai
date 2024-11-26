@@ -1,4 +1,6 @@
 import math
+import random
+
 import pandas
 from pandas import DataFrame
 from toposort import toposort
@@ -71,14 +73,11 @@ def create_course_sequence(topological_sort, prerequisites, priorities, topics, 
     for equivalence_set in topological_sort:
         non_prioritized += equivalence_set
 
-    courses = defaultdict(list)
-    topics_added = set()
+    topics_added = set(['ROOT'])
     course_sequence = []
     
     candidates = [x for x in non_prioritized if x not in topics_added]
     while len(candidates) != 0:
-        candidates = [x for x in non_prioritized if x not in topics_added]
-    
         valid_topics = [x for x in priorities if x in candidates and set(prerequisites[x]) - topics_added == set()]
 
         if False:
@@ -88,24 +87,27 @@ def create_course_sequence(topological_sort, prerequisites, priorities, topics, 
         else:
             topic_to_add = candidates[0]
 
+        print("Adding %s to course sequence, current: %s" % (topic_to_add, str(topics_added)))
         # Find out how many courses this topic has
-        if topic_to_add == 'ROOT':
-            topics_added.add(topic_to_add)
-            continue
 
         requirement = int(topics[topics['ID']==topic_to_add]['Requirement'].iloc[0])
 
-
         # Get those courses
-        candidates = courses[courses["Skill"]==topic_to_add][courses["IncludeInSchedule"]=="YES"]
+        try:
+            candidates = courses[courses["Skill"]==topic_to_add][courses["IncludeInSchedule"]=="YES"]
+        except IndexError:
+            # If we don't find flagged courses, take all of them
+            candidates = courses[courses["Skill"]==topic_to_add]
 
-        assert len(candidates) >= requirement, "Not enough courses to satisfy topic %s" % topic_to_add
+        assert len(candidates) >= requirement, "Not enough courses (%i) to satisfy topic %s" % (requirement, topic_to_add)
         courses_to_add = list(candidates["Course"])
         if len(candidates) > requirement:
             courses_to_add = random.sample(courses_to_add, requirement)
 
         topics_added.add(topic_to_add)
         course_sequence += courses_to_add
+
+        candidates = [x for x in non_prioritized if x not in topics_added]
 
     return course_sequence
 
@@ -185,5 +187,5 @@ if __name__ == "__main__":
     course_schedule = create_course_schedule(course_sequence, raw_courses)
     print("Schedule", course_schedule)
 
-    create_graphviz(meta, output=file)
+    create_graphviz(meta, output="dependency_graph/all")
     
