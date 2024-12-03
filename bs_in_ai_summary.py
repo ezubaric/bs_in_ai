@@ -148,9 +148,9 @@ class Requirement:
 
     def render_latex(self):
         if self.requirement > 1:
-            line =  "\\textbf{%s} [%i Credits Total] (Take %i of the courses)" % (self.name, self.requirement)
+            line =  "\\textbf{%s} [%i Credits Total] (Take %i of the courses)" % (self.name, self.requirement * self.credit, self.requirement)
         else:
-            line = "\\textbf{%s} [%i Credits]" % self.name
+            line = "\\textbf{%s} [%i Credits]" % (self.name, self.credit)
 
         courses = []
         for course, status in zip(self.courses, self.statuses):
@@ -242,8 +242,31 @@ def dependency_graph_from_df(courses_df: DataFrame, graph: Dict[str, Dict[str, I
     
     return graph
 
+def latex_format_course(values, remove_empty_description=False):
+    description = values["Description"]
+
+    value = "\\item \\textbf{%s (%s)}" % (values["Title"], values["Course"])
+    if description and not isinstance(description, float):
+        return value + ": " + description
+    elif not remove_empty_description:
+        return value + "Description TBD"
+    
+    
+def generate_readable_courses_given_status(raw_courses, status):
+    yield "\\begin{enumerate}"
+    for row, values in raw_courses[raw_courses["Status"]==status].iterrows():
+        formatted = latex_format_course(values)
+        if formatted:
+            yield formatted
+    yield "\\end{enumerate}"
+
 def generate_readable_courses(raw_courses):
-    None
+    statuses = set(raw_courses["Status"])
+
+    for status in statuses:
+        with open("course_descriptions/%s.tex" % status, 'w') as outfile:
+            lines = "\n".join(generate_readable_courses_given_status(raw_courses, status))
+            outfile.write(lines)
 
 if __name__ == "__main__":
     with open("course_source/core.csv") as infile:
@@ -274,3 +297,5 @@ if __name__ == "__main__":
     create_graphviz(meta, output="dependency_graph/all")
     
     write_tables(raw_topics, raw_courses, topo)
+
+    generate_readable_courses(raw_courses)
