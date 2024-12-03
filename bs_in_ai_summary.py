@@ -135,8 +135,81 @@ def create_course_schedule(course_sequence, course_descriptions, courses_per_tim
     return courses
 
 
+class Requirement:
+    def __init__(self, key, name, concentration, requirement, courses, statuses):
+        assert len(courses) == len(statuses)
+        self.key = key
+        self.name = name
+        self.concentration = concentration
+        self.requirement = requirement
+        self.courses = courses
+        self.statuses = statuses
+
+    def render_latex(self):
+        if self.requirement > 1:
+            yield "{\\bf %s} (Take %i of the below courses)"
+            yield "\\midrule"
+        else:
+            yield "{\\bf %s}"
+
+        courses = []
+        for course, status in zip(self.courses, self.statuses):
+            if status.lower() == "new":
+                courses.append("\\textit{%s}" % course)
+            else:
+                courses.append(course)
+        yield ", ".join(courses)
 
 
+def generate_latex_table(requirements, concentration, credit_per_course=3):
+    credit_total = 0
+
+    yield "\\begin{tabular}{p{7cm}}"
+    yield "\\toprule"
+    
+    for requirement in requirements:
+        if requirement.concentration.lower() == "core" or requirement.concentration.lower() == concentration:
+            credit_total = requirement.requirement * credit_per_course
+
+        if requirement.concentration.lower() == concentration:
+            for latex in requirement.render_latex():
+                yield latex + "\\\\"
+
+    yield "\\bottomrule"
+
+    yield "\\end{tabular}"
+
+    if concentration == "core":
+        yield "Total Credits: %i"% credit_total
+    else:
+        yield "Total Credits (including core): %i" % credit_total
+            
+
+def generate_requirements(raw_topics, raw_courses, topo):
+    for group in topo:
+        for topic in group:
+            pretty = list(raw_topics[raw_topics["ID"] ==topic]["Pretty Label"])[0]
+            requirements = list(raw_topics[raw_topics["ID"] ==topic]["Requirement"])[0] 
+            concentration = list(raw_topics[raw_topics["ID"] ==topic]["Concentration"])[0]           
+            courses = list(raw_courses[raw_courses["Skill"]==topic]["Course"])
+            statuses = list(raw_courses[raw_courses["Skill"]==topic]["Status"])            
+            yield Requirement(topic, pretty, concentration, requirements, courses, statuses)
+
+def write_tables(raw_topics, raw_courses, topo):
+    concentrations = set(raw_topics[raw_topics["Concentration"].notnull()].Concentration)
+
+    # Always do Core first
+    assert "Core" in concentrations
+    concentrations.remove("Core")
+
+    requirements = list(generate_requirements(raw_topics, raw_courses, topo))
+
+    for concentration in ["Core"] + list(concentrations):
+        with open("requirements/%s.tex" % concentration, 'w') as outfile:
+            for line in generate_latex_table(requirements, concentration):
+                outfile.write(line + "\n")
+
+    
 
 def dependency_graph_from_df(courses_df: DataFrame, graph: Dict[str, Dict[str, Iterable[str]]] = defaultdict(dict)) -> Dict[str, Dict[str, Iterable[str]]]:
     all_nodes = set(courses_df["ID"])
@@ -189,3 +262,4 @@ if __name__ == "__main__":
 
     create_graphviz(meta, output="dependency_graph/all")
     
+    write_tables(raw_topics, raw_courses, topo)
