@@ -148,9 +148,9 @@ class Requirement:
 
     def render_latex(self):
         if self.requirement > 1:
-            line =  "\\textbf{%s} (Take %i of the courses)" % (self.name, self.requirement)
+            line =  "\\textbf{%s} [%i Credits Total] (Take %i of the courses)" % (self.name, self.requirement)
         else:
-            line = "\\textbf{%s}" % self.name
+            line = "\\textbf{%s} [%i Credits]" % self.name
 
         courses = []
         for course, status in zip(self.courses, self.statuses):
@@ -186,8 +186,8 @@ def generate_latex_table(requirements, concentration):
 
     yield "\\end{longtable}"
 
-    if concentration == "core":
-        yield "Total Credits: %i"% credit_total
+    if concentration.lower() == "core":
+        yield "Total Credits for Core: %i"% credit_total
     else:
         yield "Total Credits (including core): %i" % credit_total
             
