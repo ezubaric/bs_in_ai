@@ -91,6 +91,7 @@ def create_course_sequence(topological_sort, prerequisites, priorities, topics, 
         # Find out how many courses this topic has
 
         requirement = int(topics[topics['ID']==topic_to_add]['Requirement'].iloc[0])
+        credits = int(topics[topics['ID']==topic_to_add]['Credits'].iloc[0])        
 
         # Get those courses
         try:
@@ -105,7 +106,7 @@ def create_course_sequence(topological_sort, prerequisites, priorities, topics, 
             courses_to_add = random.sample(courses_to_add, requirement)
 
         topics_added.add(topic_to_add)
-        course_sequence += courses_to_add
+        course_sequence += [(x, credits) for x in courses_to_add]
 
         candidates = [x for x in non_prioritized if x not in topics_added]
 
@@ -115,16 +116,25 @@ def create_course_sequence(topological_sort, prerequisites, priorities, topics, 
 def check_course_prereq(prereqs, history, concurrent):
     return True
 
-def create_course_schedule(course_sequence, course_descriptions, courses_per_time=3):
+def create_course_schedule(course_sequence, course_descriptions, credits_per_time=11):
 
     courses = defaultdict(list)
 
-    for idx, course in enumerate(course_sequence):
-        courses[idx // courses_per_time].append(course)
+    idx = 0
+    current_credits = 0
+    # This could be more efficient packing
+    for course, credits in course_sequence:
+        if current_credits + credits <= credits_per_time:
+            courses[idx].append((course, credits))
+            current_credits += credits
+        else:
+            idx += 1
+            current_credits = credits
+            courses[idx].append((course, credits))
 
     history = []
     for time in courses:
-        for course in courses[time]:
+        for course, credits in courses[time]:
             prereqs = list(course_descriptions[course_descriptions["Course"]==course]["Prereqs"])
             assert len(prereqs) == 1, "Multiple entries for %s" % course
             prereqs = prereqs[0]
@@ -278,6 +288,38 @@ def generate_readable_courses(raw_courses):
             lines = "\n".join(generate_readable_courses_given_status(raw_courses, status))
             outfile.write(lines)
 
+def write_schedule(schedule, filename):
+    lines = []
+    lines.append("\\begin{tabular}{cll}")
+    lines.append("\\toprule")    
+    lines.append("Year & Fall & Spring \\\\")
+    lines.append("\\midrule")
+    for year in range(4):
+        year_string = str(year + 1)
+        fall_courses = schedule[2 * year]
+        spring_courses = schedule[2 * year + 1]
+
+        for row in range(max(len(fall_courses), len(spring_courses))):
+            if row < len(spring_courses):
+                spring = "%s (%i)" % spring_courses[row]
+            else:
+                spring = ""
+
+            if row < len(fall_courses):
+                fall = "%s (%i)" % fall_courses[row]
+            else:
+                fall = ""
+            lines.append("%s & %s & %s \\\\" % (year_string, fall, spring))
+            year_string = ""
+        if year != 3:
+            lines.append("\\midrule")
+        else:
+            lines.append("\\bottomrule")
+    lines.append("\\end{tabular}")
+    
+    with open(filename, 'w') as outfile:
+        outfile.write("\n".join(lines))
+            
 if __name__ == "__main__":
     with open("course_source/core.csv") as infile:
         raw_topics = pandas.read_csv(infile)
@@ -298,11 +340,14 @@ if __name__ == "__main__":
 
     print("Priorities", priorities)
 
-    course_sequence = create_course_sequence(topo, prerequisites, priorities, raw_topics, raw_courses)
-    print("Sequence", course_sequence)
+    for specialization in ["GenAI"]:
+        course_sequence = create_course_sequence(topo, prerequisites, priorities, raw_topics, raw_courses)
+        print("Sequence (%s)" % specialization, course_sequence)
     
-    course_schedule = create_course_schedule(course_sequence, raw_courses)
-    print("Schedule", course_schedule)
+        course_schedule = create_course_schedule(course_sequence, raw_courses)
+        print("Schedule (%s)" % specialization, course_schedule)
+
+        write_schedule(course_schedule, "schedules/%s.tex" % specialization)
 
     create_graphviz(meta, output="dependency_graph/all")
     
