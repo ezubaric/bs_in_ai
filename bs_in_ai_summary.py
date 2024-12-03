@@ -158,7 +158,17 @@ class Requirement:
                 courses.append("\\textit{%s}" % course)
             else:
                 courses.append(course)
-        yield "%s & %s" % (line, ", ".join(courses))
+
+
+        
+        if len(courses) == 2:
+            course_list = " or ".join(courses)
+        elif len(courses) > 2:
+            course_list = ", ".join(courses[:-1]) + ", or " + courses[-1]
+        else:
+            course_list = ", ".join(courses)
+            
+        yield "%s & %s" % (line, course_list)
 
 
 def generate_latex_table(requirements, concentration):
