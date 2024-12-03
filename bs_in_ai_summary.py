@@ -142,15 +142,14 @@ class Requirement:
         self.name = name
         self.concentration = concentration
         self.requirement = requirement
-        self.courses = courses
+        self.courses = [x.replace(" ", "~") for x in courses]
         self.statuses = statuses
 
     def render_latex(self):
         if self.requirement > 1:
-            yield "{\\bf %s} (Take %i of the below courses)"
-            yield "\\midrule"
+            line =  "\\textbf{%s} (Take %i of the courses)" % (self.name, self.requirement)
         else:
-            yield "{\\bf %s}"
+            line = "\\textbf{%s}" % self.name
 
         courses = []
         for course, status in zip(self.courses, self.statuses):
@@ -158,26 +157,31 @@ class Requirement:
                 courses.append("\\textit{%s}" % course)
             else:
                 courses.append(course)
-        yield ", ".join(courses)
+        yield "%s & %s" % (line, ", ".join(courses))
 
 
 def generate_latex_table(requirements, concentration, credit_per_course=3):
     credit_total = 0
 
-    yield "\\begin{tabular}{p{7cm}}"
+    yield "\\rowcolors{2}{gray!25}{white}"
+    yield "\\begin{longtable}{p{7cm}>{\\raggedleft\\arraybackslash}p{7cm}}"
+    yield "Topic & Courses \\\\"
     yield "\\toprule"
     
     for requirement in requirements:
+        if requirement.key == "ROOT":
+            continue
         if requirement.concentration.lower() == "core" or requirement.concentration.lower() == concentration:
             credit_total = requirement.requirement * credit_per_course
 
-        if requirement.concentration.lower() == concentration:
+        if requirement.concentration.lower() == concentration.lower():
             for latex in requirement.render_latex():
-                yield latex + "\\\\"
+                padding = max(1, 75 - len(latex))
+                yield latex + padding * " " + "\\\\"
 
     yield "\\bottomrule"
 
-    yield "\\end{tabular}"
+    yield "\\end{longtable}"
 
     if concentration == "core":
         yield "Total Credits: %i"% credit_total
