@@ -136,12 +136,13 @@ def create_course_schedule(course_sequence, course_descriptions, courses_per_tim
 
 
 class Requirement:
-    def __init__(self, key, name, concentration, requirement, courses, statuses):
+    def __init__(self, key, name, concentration, requirement, courses, statuses, credit=3):
         assert len(courses) == len(statuses)
         self.key = key
         self.name = name
         self.concentration = concentration
         self.requirement = requirement
+        self.credit = credit
         self.courses = [x.replace(" ", "~") for x in courses]
         self.statuses = statuses
 
@@ -160,7 +161,7 @@ class Requirement:
         yield "%s & %s" % (line, ", ".join(courses))
 
 
-def generate_latex_table(requirements, concentration, credit_per_course=3):
+def generate_latex_table(requirements, concentration):
     credit_total = 0
 
     yield "\\rowcolors{2}{gray!25}{white}"
@@ -171,8 +172,10 @@ def generate_latex_table(requirements, concentration, credit_per_course=3):
     for requirement in requirements:
         if requirement.key == "ROOT":
             continue
-        if requirement.concentration.lower() == "core" or requirement.concentration.lower() == concentration:
-            credit_total = requirement.requirement * credit_per_course
+        if requirement.concentration.lower() == "core" or requirement.concentration.lower() == concentration.lower():
+            credit_total += requirement.requirement * requirement.credit
+        else:
+            print("Excluding %s from %s" % (requirement.key, concentration))
 
         if requirement.concentration.lower() == concentration.lower():
             for latex in requirement.render_latex():
@@ -193,11 +196,12 @@ def generate_requirements(raw_topics, raw_courses, topo):
     for group in topo:
         for topic in group:
             pretty = list(raw_topics[raw_topics["ID"] ==topic]["Pretty Label"])[0]
-            requirements = list(raw_topics[raw_topics["ID"] ==topic]["Requirement"])[0] 
+            requirements = list(raw_topics[raw_topics["ID"] ==topic]["Requirement"])[0]
+            credit = list(raw_topics[raw_topics["ID"] ==topic]["Credits"])[0]             
             concentration = list(raw_topics[raw_topics["ID"] ==topic]["Concentration"])[0]           
             courses = list(raw_courses[raw_courses["Skill"]==topic]["Course"])
             statuses = list(raw_courses[raw_courses["Skill"]==topic]["Status"])            
-            yield Requirement(topic, pretty, concentration, requirements, courses, statuses)
+            yield Requirement(topic, pretty, concentration, requirements, courses, statuses, credit)
 
 def write_tables(raw_topics, raw_courses, topo):
     concentrations = set(raw_topics[raw_topics["Concentration"].notnull()].Concentration)
@@ -237,6 +241,9 @@ def dependency_graph_from_df(courses_df: DataFrame, graph: Dict[str, Dict[str, I
             graph[id]["Dependencies"] = dependencies
     
     return graph
+
+def generate_readable_courses(raw_courses):
+    None
 
 if __name__ == "__main__":
     with open("course_source/core.csv") as infile:

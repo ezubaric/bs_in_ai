@@ -1,7 +1,8 @@
 Skill,Course,Title,Status,IncludeInSchedule,Description,Notes,Prereqs
 Programming1,CMSC 141,,Refocus,YES,"This course is an introduction to computing and programming through the lens of data. It aims to give you ways of thinking about solving problems using computation. Students will learn to write programs to process both tabular and structured data, to assess programs both experimentally and theoretically, to apply basic data science concepts, and to discuss big ideas around the communication, use, and social impacts of digital information.",https://dcic-world.org/2022-01-25/index.html,
+Programming1,CMSC 131,,Existing,,Introduction to programming and computer science. Emphasizes understanding and implementation of applications using object-oriented techniques. Develops skills such as program design and testing as well as implementation of programs using a graphical IDE. Programming done in Java.,,
 Programming2,CMSC 142,,Refocus,YES,"This course explains the concepts and techniques required to write programs that can handle large amounts of data efficiently. Project-oriented and classroom-tested, it presents a number of important algorithms—supported by motivating examples—that bring meaning to the problems faced by computer programmers. The idea of computational complexity is introduced, demonstrating what can and cannot be computed efficiently at scale, helping programmers make informed judgements about the algorithms they use. ",https://kentdlee.github.io/CS2Plus/build/html/index.html,"CMSC141,CMSC131"
-,,,,,,,
+Programming2,CMSC 132,,Existing,,"Introduction to use of computers to solve problems using software engineering principles. Design, build, test, and debug medium -size software systems and learn to use relevant tools. Use object-oriented methods to create effective and efficient problem solutions. Use and implement application programming interfaces (APIs). Programming done in Java.",,"MATH140,CMSC131"
 Programming2,INST 326,,Existing,,"An introduction to programming, emphasizing understanding and
 implementation of applications using object-oriented techniques. Topics to
 be covered include program design and testing as well as implementation of
@@ -39,7 +40,7 @@ Compgraphs,BSAI 216,Efficient Systems for AI Applications,"New,Required",YES,"Th
 
 One thing I'm not overjoyed about is that we'd almost certainly have to use CUDA, which is fairly proprietary.  But I don't see a viable alternative.",
 ,,,,,,,
-Zermelo,AI 220,Measuring Preferences and Rankings,New,YES,"A key component of modern AI systems is knowing when one AI system (or its output) is better than another.  Many of the mathematical tools used to make these decisions come from psychology.  This course introduces the mathematical tools that form the foundation of these techniques, teaches students to fit these models to data, and then explains how these models are used in modern AI systems and in AI evaluations.",,
+GenAIRequired,AI 220,Measuring Preferences and Rankings,New,YES,"A key component of modern AI systems is knowing when one AI system (or its output) is better than another.  Many of the mathematical tools used to make these decisions come from psychology.  This course introduces the mathematical tools that form the foundation of these techniques, teaches students to fit these models to data, and then explains how these models are used in modern AI systems and in AI evaluations.",,
 ,,,,,,,
 ,,,,,,,
 Algorithms,CMSC 351,,Existing,YES,,Would want to change prereq to require 216 or CMSC 216,
@@ -54,14 +55,15 @@ Gofai,CMSC 421,,Existing,,"Introduces a range of ideas and methods in AI, varyin
 Neural,CMSC 422,,Existing,,Machine Learning studies representations and algorithms that allow machines to improve their performance on a task from experience. This is a broad overview of existing methods for machine learning and an introduction to adaptive systems in general. Emphasis is given to practical aspects of machine learning and data mining.,,"CMSC320, CMSC330, and CMSC351, MATH240"
 Neural,AI 222,,New,YES,"This course presents the foundational algorithms of using data to learn algorithms and representations to solve real-world problems.  The course begins by covering representations of examples using learned distributed representations and pre-defined sparse representations, and then progresses to learning classifiers from those representations.  The course then moves to algorithms for learning these classifiers from larger datasets and how to debug whether the learned algorithms are learning effectively from the data.",,AI 221
 ,,,,,,,
-GenAIRequired,BSAI 270,Multilingual Text Processing,New,YES,"This course covers the representation and manipulation of linguistic data on computers.  After establishing the fundamentals of byte-level representation and how different languages are represented on a computer, the course discusses the type / token distinction of word use and how this is reflected in computational representations of language and how this is complicated by languages with implicit or ambiguous tokenization.  Finally, the course ends with a review of the lexicosemantic resources available for the words languges.",,
+GenAIRequired,AI 270,Multilingual Text Processing and Evaluation,New,YES,"This course covers the representation and manipulation of linguistic data on computers.  After establishing the fundamentals of byte-level representation and how different languages are represented on a computer, the course discusses the type / token distinction of word use and how this is reflected in computational representations of language and how this is complicated by languages with implicit or ambiguous tokenization.  Finally, this course covers the application of large models (taken as a given) and resources to novel tasks or in novel combinations: how to adapt existing resources to new tasks, how to evaluate how well the models perform, and how to efficiently adapt models to these tasks.  ",,
 GenAIRequired,LING 200,Introductory Linguistics,Existing,YES,,,
 GenAIRequired,LING 240,Language and Mind,Existing,YES,,,
-GenAIRequired,LING 311,Syntax I,Existing,YES,,,
-GenAIRequired,LING 410,Grammar and Meaning,Existing,YES,,,
-GenAIRequired,BSAI 429,Multimodal Generation,New,YES,,,
-GenAIRequired,CMSC 470,Natural Language Processing,Existing,YES,,,
-GenAIRequired,BSAI 479,AI Evaluation and Application,New,YES,"While other courses cover the construction and fundamentals of core AI methods, many of these models already exist.  This course covers the application of large models and resources to novel tasks or in novel combinations: how to adapt existing resources to new tasks, how to evaluate how well the models perform, and how to efficiently adapt models to these tasks.  ","In 2024, this would look like adaptation (LoRA), prompting, using offline models vs. APIs, etc.  Obviously the course description needs to be more general so that it doesn't get too stale.",
+,,,,,,,
+GenAIElective,LING 311,Syntax I,Existing,YES,,,
+GenAIElective,LING 410,Grammar and Meaning,Existing,YES,,,
+GenAIRequired,AI 429,Multimodal Generation,New,YES,,,
+GenAIRequired,CMSC 470,Natural Language Processing,Existing,YES,,Should be default now cover LLMs and LoRA (circa 2024),
+,,,,,,,
 ,,,,,,,
 GenAIElective,CMSC 426,Computer Vision,Existing,YES,,,
 GenAIElective,CMSC 427,Computer Graphics,Existing,YES,,,
@@ -69,5 +71,3 @@ GenAIElective,LING 320,Phonetics,Existing,,,,
 GenAIElective,LING 321,Phonology I,Existing,,,,
 GenAIElective,LING 322,Phonology II,Existing,,,,
 GenAIElective,LING 330,Historical Linguistics,Existing,,,,
-GenAIElective,JAPN 412,Foreign language > 300 Level,Existing,YES,,,
-GenAIElective,JAPN 407,Foreign language > 300 Level,Existing,YES,,,
