@@ -52,8 +52,8 @@ Introsem,AI 101,The Current AI Moment,Shared,YES,"This course introduces student
 ,,,,,,,
 Gofai,AI 221,Classical AI Algorithms,New,YES,"This course introduces the foundation of AI theory and practice.  Students learn how to search over structured representations to find optimal solutions to planning problems, how to represent real-world problems in graph structures or game trees, and how to represent and solve AI problems using first-order logic.  Credit only granted to one of 421 or 221.","This course covers much of the same content as 421.  Students would have the option of taking either (and we'd share this course with the BA).  However, it wouldn't be as difficult (or as deep as) 421.  Students wouldn't be able to get credit for both.",
 Gofai,CMSC 421,Introduction to Artificial Intelligence,Existing,,"Introduces a range of ideas and methods in AI, varying semester to semester but chosen largely from: automated heuristic search, planning, games, knowledge representation, logical and statistical inference, learning, natural language processing, vision, robotics, cognitive modeling, and intelligent agents. Programming projects will help students obtain a hands-on feel for various topics.  Credit only granted to one of 421 or 221.","This seems fine to maintain as is, given 221 is another option.",Prerequisite: Minimum grade of C- in CMSC351 and CMSC330; and permission of CMNS-Computer Science department. 
-Neural,CMSC 422,Introduction to Machine Learning,Existing,,Machine Learning studies representations and algorithms that allow machines to improve their performance on a task from experience. This is a broad overview of existing methods for machine learning and an introduction to adaptive systems in general. Emphasis is given to practical aspects of machine learning and data mining.  Credit only granted to one of 422 or 322.,,"CMSC320, CMSC330, and CMSC351, MATH240"
-Neural,AI 322,Introduction to Neural Modeling,New,YES,"This course presents the foundational algorithms of using data to learn algorithms and representations to solve real-world problems.  The course begins by covering representations of examples using learned distributed representations and pre-defined sparse representations, and then progresses to learning classifiers from those representations.  The course then moves to algorithms for learning these classifiers from larger datasets and how to debug whether the learned algorithms are learning effectively from the data.  Credit only granted to one of 422 and 322.",,AI 221
+Neural,CMSC 472,Introduction to Machine Learning,Existing,,Machine Learning studies representations and algorithms that allow machines to improve their performance on a task from experience. This is a broad overview of existing methods for machine learning and an introduction to adaptive systems in general. Emphasis is given to practical aspects of machine learning and data mining.  Credit only granted to one of 472 or 372.,,"CMSC320, CMSC330, and CMSC351, MATH240"
+Neural,AI 372,Introduction to Neural Modeling,New,YES,"An introduction to deep learning, a machine learning technique, as well as its applications to a variety of domains. Provides a broad overview of deep learning concepts including neural networks, convolutional neural networks, recurrent neural networks, generative models, and deep reinforcement learning, and an intuitive introduction to basics of machine learning such as simple models, learning paradigms, optimization, overfitting, importance of data, and training caveats.  Credit only granted to one of 472 and 372.",,AI 221
 ,,,,,,,
 GenAIRequired,AI 370,Multilingual Text Processing and Evaluation,New,YES,"This course covers the representation and manipulation of linguistic data on computers.  After establishing the fundamentals of byte-level representation and how different languages are represented on a computer, the course discusses the type / token distinction of word use and how this is reflected in computational representations of language and how this is complicated by languages with implicit or ambiguous tokenization.  Finally, this course covers the application of large models (taken as a given) and resources to novel tasks or in novel combinations: how to adapt existing resources to new tasks, how to evaluate how well the models perform, and how to efficiently adapt models to these tasks.  ",,
 GenAIRequired,LING 200,Introductory Linguistics,Existing,YES,"An exploration of the nature of human language. Introduction to the basic concepts and methodology of modern linguistic analysis (sound systems, word formation, sentence structure). Examination of the factors that contribute to dialect differences and the social implications of language variation. Additional topics may include: semantics, pragmatics, language change, writing systems, typology, language universals, comparison with other communication systems.",,
@@ -79,9 +79,9 @@ UnspecializedElective,CHBE 452,Introduction of Machine Learning in Chemical Engi
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
-UnspecializedElective,CMSC421,Introduction to Artificial Intelligence,Existing,YES,,,
 ,,,,,,,
-UnspecializedElective,CMSC422,Introduction to Machine Learning,Existing,YES,,,
+,,,,,,,
+,,,,,,,
 ,,,,,,,
 UnspecializedElective,CMSC425,Game Programming,Existing,,,,
 ,,,,,,,
@@ -91,7 +91,7 @@ UnspecializedElective,CMSC454,Algorithms for Data Science,Existing,YES,,,
 ,,,,,,,
 UnspecializedElective,CMSC470,Introduction to Natural Language Processing,Existing,,,,
 ,,,,,,,
-UnspecializedElective,CMSC472,Introduction to Deep Learning,Existing,YES,,,
+UnspecializedElective,CMSC422,Introduction to Machine Learning,Existing,YES,,,
 ,,,,,,,
 UnspecializedElective,CMSC473,Capstone in Machine Learning,Existing,,,,
 ,,,,,,,
