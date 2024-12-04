@@ -283,7 +283,7 @@ def latex_format_course(values, remove_empty_description=False):
     if description and not isinstance(description, float):
         return value + ": " + description
     elif not remove_empty_description:
-        return value + "Description TBD"
+        return value 
     
     
 def generate_readable_courses_given_status(raw_courses, status):
