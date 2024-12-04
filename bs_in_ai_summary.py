@@ -69,46 +69,30 @@ def create_course_sequence(topological_sort, prerequisites, priorities, topics, 
     Convert a sequence of topics into a sequence of courses.
     """
 
-    non_prioritized = []
-    for equivalence_set in topological_sort:
-        non_prioritized += equivalence_set
-
-    topics_added = set(['ROOT'])
-    course_sequence = []
+    course_sequence = defaultdict(list)
     
-    candidates = [x for x in non_prioritized if x not in topics_added]
-    while len(candidates) != 0:
-        valid_topics = [x for x in priorities if x in candidates and set(prerequisites[x]) - topics_added == set()]
-
-        if False:
-            max_priority = max(priorities[x] for x in valid_courses)
+    for step, equivalence_set in enumerate(topological_sort):
+        for topic_to_add in equivalence_set:
+            # Find out how many courses this topic has
+            if topic_to_add == "ROOT":
+                continue
             
-            topic_to_add = [x for x in priorities if priorities[x] == max_priority][0]
-        else:
-            topic_to_add = candidates[0]
+            requirement = int(topics[topics['ID']==topic_to_add]['Requirement'].iloc[0])
+            credits = int(topics[topics['ID']==topic_to_add]['Credits'].iloc[0])        
 
-        print("Adding %s to course sequence, current: %s" % (topic_to_add, str(topics_added)))
-        # Find out how many courses this topic has
+            # Get those courses
+            try:
+                candidates = courses[courses["Skill"]==topic_to_add][courses["IncludeInSchedule"]=="YES"]
+            except IndexError:
+                # If we don't find flagged courses, take all of them
+                candidates = courses[courses["Skill"]==topic_to_add]
 
-        requirement = int(topics[topics['ID']==topic_to_add]['Requirement'].iloc[0])
-        credits = int(topics[topics['ID']==topic_to_add]['Credits'].iloc[0])        
+            assert len(candidates) >= requirement, "Not enough courses (%i) to satisfy topic %s" % (requirement, topic_to_add)
+            courses_to_add = list(candidates["Course"])
+            if len(candidates) > requirement:
+                courses_to_add = random.sample(courses_to_add, requirement)
 
-        # Get those courses
-        try:
-            candidates = courses[courses["Skill"]==topic_to_add][courses["IncludeInSchedule"]=="YES"]
-        except IndexError:
-            # If we don't find flagged courses, take all of them
-            candidates = courses[courses["Skill"]==topic_to_add]
-
-        assert len(candidates) >= requirement, "Not enough courses (%i) to satisfy topic %s" % (requirement, topic_to_add)
-        courses_to_add = list(candidates["Course"])
-        if len(candidates) > requirement:
-            courses_to_add = random.sample(courses_to_add, requirement)
-
-        topics_added.add(topic_to_add)
-        course_sequence += [(x, credits) for x in courses_to_add]
-
-        candidates = [x for x in non_prioritized if x not in topics_added]
+            course_sequence[step] += [(x, credits) for x in courses_to_add]
 
     return course_sequence
 
@@ -117,30 +101,47 @@ def check_course_prereq(prereqs, history, concurrent):
     return True
 
 def create_course_schedule(course_sequence, course_descriptions, credits_per_time=11):
-
     courses = defaultdict(list)
+
+    # Keep track of all courses added
+    added = set()
 
     idx = 0
     current_credits = 0
     # This could be more efficient packing
-    for course, credits in course_sequence:
-        if current_credits + credits <= credits_per_time:
-            courses[idx].append((course, credits))
+    for step in course_sequence:
+        for _ in course_sequence[step]:
+            valid_courses = [(credits, course) for course, credits in course_sequence[step]
+                             if current_credits + credits <= credits_per_time and
+                             course not in added]
+            valid_courses.sort()
+            
+            # Add the smallest unit course
+            if not valid_courses:
+                idx += 1
+                current_credits = 0
+                valid_courses = [(credits, course) for course, credits in course_sequence[step]
+                                 if current_credits + credits <= credits_per_time and
+                                 course not in added]
+                valid_courses.sort()
+
+            assert valid_courses, (course_sequence[step], courses, idx, current_credits)
+            credits, course = valid_courses[0]
+            courses[idx].append((course, credits, step))
+            added.add(course)
             current_credits += credits
-        else:
-            idx += 1
-            current_credits = credits
-            courses[idx].append((course, credits))
+        idx += 1
+        current_credits = 0
 
     history = []
     for time in courses:
-        for course, credits in courses[time]:
+        for course, credits, step in courses[time]:
             prereqs = list(course_descriptions[course_descriptions["Course"]==course]["Prereqs"])
             assert len(prereqs) == 1, "Multiple entries for %s" % course
             prereqs = prereqs[0]
             
             assert check_course_prereq(prereqs, history, courses[time])
-        history += courses[time]
+        history += [x[0] for x in courses[time]]
 
     return courses
 
@@ -301,12 +302,12 @@ def write_schedule(schedule, filename):
 
         for row in range(max(len(fall_courses), len(spring_courses))):
             if row < len(spring_courses):
-                spring = "%s (%i)" % spring_courses[row]
+                spring = "%s (%i) [%i]" % spring_courses[row]
             else:
                 spring = ""
 
             if row < len(fall_courses):
-                fall = "%s (%i)" % fall_courses[row]
+                fall = "%s (%i) [%i]" % fall_courses[row]
             else:
                 fall = ""
             lines.append("%s & %s & %s \\\\" % (year_string, fall, spring))
