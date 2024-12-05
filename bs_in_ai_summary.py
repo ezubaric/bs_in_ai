@@ -30,7 +30,19 @@ def extract_dependencies_and_sort(graph: Dict[str, Union[str, Iterable[str]]]) -
     result[0] = set(['ROOT'])
     return result
 
-def create_graphviz(meta: Dict[str, Iterable[str]], name='', output='', concentrations=['core']):
+kCOLOR_LOOKUP={"AI": "lightyellow", "CS": "pink", "MATH": "lightgreen", "Outside": "lightskyblue"}
+
+def lookup_color(skill_attributes):
+    if isinstance(skill_attributes["Unit"], float):
+        return 'gray90'
+
+    for field in kCOLOR_LOOKUP:
+        print(skill_attributes["Unit"])
+        if skill_attributes["Unit"].startswith(field):
+            return kCOLOR_LOOKUP[field]
+    return 'gray90'
+
+def create_graphviz(meta: Dict[str, Iterable[str]], name='', output='', concentrations=['core'], color_lookup=lookup_color):
     dot = graphviz.Digraph(comment=name)
 
     needed_nodes = []
@@ -45,7 +57,7 @@ def create_graphviz(meta: Dict[str, Iterable[str]], name='', output='', concentr
         label = meta[node]['Pretty Label']
         
         assert isinstance(label, str), "Bad label for %s: %s" % (node, label)
-        dot.node(node, label)
+        dot.node(node, label, fillcolor=color_lookup(meta[node]), style="filled")
 
         for parent in meta[node]['Dependencies']:
             dot.edge(parent, node)
