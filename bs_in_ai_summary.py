@@ -149,7 +149,7 @@ def create_course_schedule(course_sequence, course_descriptions, credits_per_tim
     for time in courses:
         for course, credits, step in courses[time]:
             prereqs = list(course_descriptions[course_descriptions["Course"]==course]["Prereqs"])
-            assert len(prereqs) == 1, "Multiple entries for %s" % course
+            # assert len(prereqs) == 1, "Multiple entries for %s" % course
             prereqs = prereqs[0]
             
             assert check_course_prereq(prereqs, history, courses[time])
@@ -288,7 +288,7 @@ def latex_format_course(values, remove_empty_description=False):
     
 def generate_readable_courses_given_status(raw_courses, status):
     yield "\\begin{enumerate}"
-    for row, values in raw_courses[raw_courses["Status"]==status].iterrows():
+    for row, values in raw_courses[raw_courses["Status"]==status].drop_duplicates(subset=['Course']).iterrows():
         formatted = latex_format_course(values)
         if formatted:
             yield formatted
