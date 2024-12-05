@@ -359,11 +359,12 @@ if __name__ == "__main__":
     for specialization in ["GenAI"]:
         course_sequence = create_course_sequence(topo, prerequisites, priorities, raw_topics, raw_courses)
         print("Sequence (%s)" % specialization, course_sequence)
-    
-        course_schedule = create_course_schedule(course_sequence, raw_courses)
-        print("Schedule (%s)" % specialization, course_schedule)
 
-        write_schedule(course_schedule, "schedules/%s.tex" % specialization)
+        # Generating error
+        # course_schedule = create_course_schedule(course_sequence, raw_courses)
+        # print("Schedule (%s)" % specialization, course_schedule)
+
+        # write_schedule(course_schedule, "schedules/%s.tex" % specialization)
 
     create_graphviz(meta, output="dependency_graph/all")
     
