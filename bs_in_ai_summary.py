@@ -288,7 +288,7 @@ def latex_format_course(values, remove_empty_description=False):
     
 def generate_readable_courses_given_status(raw_courses, status):
     yield "\\begin{enumerate}"
-    for row, values in raw_courses[raw_courses["Status"]==status].drop_duplicates(subset=['Course']).iterrows():
+    for row, values in raw_courses[raw_courses["Status"]==status].drop_duplicates(subset=['Course']).sort_values(by='Course').iterrows():
         formatted = latex_format_course(values)
         if formatted:
             yield formatted
