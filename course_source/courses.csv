@@ -57,7 +57,7 @@ Introsem,AI 101,The Current AI Moment,Shared,YES,"This course introduces student
 ,,,,,,,
 Gofai,AI 221,Classical AI Algorithms,Level,YES,"This course introduces the foundation of AI theory and practice.  Students learn how to search over structured representations to find optimal solutions to planning problems, how to represent real-world problems in graph structures or game trees, and how to represent and solve AI problems using first-order logic.  Credit only granted to one of 421 or 221.","This course covers much of the same content as 421.  Students would have the option of taking either (and we'd share this course with the BA).  However, it wouldn't be as difficult (or as deep as) 421.  Students wouldn't be able to get credit for both.",
 Gofai,CMSC 421,Introduction to Artificial Intelligence,Prereq,,"Introduces a range of ideas and methods in AI, varying semester to semester but chosen largely from: automated heuristic search, planning, games, knowledge representation, logical and statistical inference, learning, natural language processing, vision, robotics, cognitive modeling, and intelligent agents. Programming projects will help students obtain a hands-on feel for various topics.  Credit only granted to one of 421 or 221.","This seems fine to maintain as is, given 221 is another option.",Prerequisite: Minimum grade of C- in CMSC351 and CMSC330; and permission of CMNS-Computer Science department. 
-Neural,CMSC 472,Introduction to Machine Learning,Prereq,,Machine Learning studies representations and algorithms that allow machines to improve their performance on a task from experience. This is a broad overview of existing methods for machine learning and an introduction to adaptive systems in general. Emphasis is given to practical aspects of machine learning and data mining.  Credit only granted to one of 472 or 372.,,"CMSC320, CMSC330, and CMSC351, MATH240"
+Neural,CMSC 472,Introduction to Deep Learning,Prereq,,"This course is an elementary introduction to a machine learning technique called deep learning, as well as its applications to a variety of domains. Along the way, the course also provides an intuitive introduction to machine learning such as simple models, learning paradigms, optimization, overfitting, importance of data, training caveats, etc. The assignments explore key concepts and simple applications, and the final project allows an in-depth exploration of a particular application area. By the end of the course, you will have an overview on the deep learning landscape and its applications. You will also have a working knowledge of several types of neural networks, be able to implement and train them, and have a basic understanding of their inner workings. Credit only granted to one of 472 or 372.",,"CMSC320, CMSC330, and CMSC351, MATH240"
 Neural,AI 372,Introduction to Neural Modeling,Level,YES,"An introduction to deep learning, a machine learning technique, as well as its applications to a variety of domains. Provides a broad overview of deep learning concepts including neural networks, convolutional neural networks, recurrent neural networks, generative models, and deep reinforcement learning, and an intuitive introduction to basics of machine learning such as simple models, learning paradigms, optimization, overfitting, importance of data, and training caveats.  Credit only granted to one of 472 and 372.",,AI 221
 ,,,,,,,
 GenAIRequired,AI 370,Multilingual Text Processing and Evaluation,New,YES,"This course covers the representation and manipulation of linguistic data on computers.  After establishing the fundamentals of byte-level representation and how different languages are represented on a computer, the course discusses the type / token distinction of word use and how this is reflected in computational representations of language and how this is complicated by languages with implicit or ambiguous tokenization.  Finally, this course covers the application of large models (taken as a given) and resources to novel tasks or in novel combinations: how to adapt existing resources to new tasks, how to evaluate how well the models perform, and how to efficiently adapt models to these tasks.  ",,
@@ -124,7 +124,7 @@ UnspecializedElective,GEOG398E,Special Topics in Geography; Introduction to Spat
 ,,,,,,,
 UnspecializedElective,GEOG461,Machine Learning for Computational Earth Observation Science,Existing,,,,
 ,,,,,,,
-UnspecializedElective,IMDM350,Advanced Digital Media Theory,Existing,,,,
+,,,,,,,
 ,,,,,,,
 UnspecializedElective,IMDM498E,Special Topics in Immersive Media; Creative Experiments with AI,Existing,,,,
 ,,,,,,,
@@ -138,3 +138,73 @@ UnspecializedRequired,AI 473,Capstone in Artificial Intelligence,New,YES,"Studen
 Semester-long project course in which each student will identify and carry out a project related to machine learning, with the goal of publishing a research paper or software tool.",,
 GenAIElective,AI 473,Capstone in Artificial Intelligence,New,YES,"Students will be paired with project advisors from the UMD faculty or alternatively, an industry advisor. Students are encouraged to plan for projects results that can be published at academic conferences or will impact academic research.
 Semester-long project course in which each student will identify and carry out a project related to machine learning, with the goal of publishing a research paper or software tool.",,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+SocietalRequired,GEOG398E,Special Topics in Geography; Introduction to Spatial Artificial Intelligence,Existing,Yes,"An introductory course to spatial artificial intelligence (AI), providing a big picture of spatial AI applications (e.g., Google Maps, Uber/Lyft, Earth observation, smart cities, autonomous vehicles), techniques, platforms, trends, debates, etc. The course will cover basics of AI, identify challenges faced by AI techniques in the context of spatial data and applications, and introduce spatial-aware AI methods to address them. AI topics include but are not limited to: spatial data models and knowledge representation, pattern mining, machine learning, perception, planning, etc. Students are expected to have a broad understanding of spatial A concepts, develop intuitions and insights to AI techniques, and have some hands-on experience (Python) at the end of the course.",,
+SocietalRequired,AI 460,AI and Life of Great Cities ,New,YES,"""AI, Data Science and Cities"" explores the transformative role of artificial intelligence
+and data science in shaping urban environments, from smart infrastructure to
+data-driven policymaking. Students will learn how to develop and apply AI algorithms
+and data science pipelines to enhance mobility, sustainability, and governance while
+also considering ethical, social, and equity challenges. Through case studies, hands-on
+projects, and interdisciplinary discussions, the course equips students with the technical
+and analytical skills needed to design AI- and data-driven urban solutions. By the end,
+students will critically assess the potential and limitations of AI and Data Science in
+building more resilient, inclusive, and intelligent cities.",,
+SocietalElective,AI 491,AI Clinic,New,YES,"The AI clinic aims to become the go-to resource for assisting local Maryland
+governments and small organizations in their procurement processes for AI tools. The
+idea behind the AI Clinic is inspired by legal clinics present across many law schools in
+the US as well as by the Clinic to End Tech Abuse (CETA) at Cornell Tech. The AI Clinic
+will provide services to local government agencies and small organizations that do not
+have the expertise or resources to carry out the evaluation of AI tools that they are
+considering using to support their decision-making processes.
+The AI Clinic will take on “AI cases” that will be led by one faculty member and by a
+group of four students with diverse educational backgrounds. AI cases will provide
+semester-long, hands-on learning opportunities for students and will prepare them for
+the challenges of AI deployment in real-world settings. The output of the AI cases might
+include reports with tool assessments (technical and community-centric) that will be
+shared with the agency or organization that requested the case, toolkits for decision
+makers on how to carry out their own AI evaluations, or training sessions for decision
+makers and small organizations on how to use different types of AI tools, among others.","(Katie Shilton and I will be piloting this sometime in 2026. Funded via the
+Values-Centered AI initiative, UMD Grand Challenges. This could easily be an
+INST 4XX, but if there is interest, it could be made an AI course and potentially
+share it with the BA in AI)",
+SocietalRequired,INST 366,"Privacy, Security and Ethics for Big Data",Existing,,,,
+SocietalRequired,INST401 ,Design and Human Disability and Aging,Existing,,,Would be good to also have CS HCI as possible prereq,
+SocietalRequired,CMSC401,Algorithms for Geospatial Computing,Existing,,,,
+,,,,,,,
+SocietalElective,SOCY105,Understanding Contemporary Social Problems - Frameworks for Critical Thinking and Strategies for Solutions,Existing,,,,
+,,,,,,,
+SocietalElective,PLCY201,Public Leaders and Active Citizens,Existing,,,,
+SocietalElective,PLCY215,Innovation and Social Change: Creating Change for Good,Existing,,,,
+SocietalElective,PLCY240,"Ethical, Policy and Social Implications for Science and Technology",Existing,,,,
+SocietalElective,ENME 444,Assistive Robotics,Existing,,,,
+RoboticsElective,ENME  444,Assistive Robotics,Existing,,,,
+,,,,,,,
+RoboticsRequired,ENME 480,Introduction to Robotics,Existing,YES,"This course is an introductory course to the robotics minor and educates students in the elementary concepts of robotics. The topics covered in the course include mathematics of rigid motion, rotations, translations, homogeneous transformations, forward kinematics, inverse kinematics, velocity kinematics, geometric Jacobian, analytical Jacobian, motion planning, trajectory generation, independent joint control, linear control methods such as PD, PID, actuator dynamics, feedforward control for trajectory tracking, force control, basic computer vision concepts including thresholding, image segmentation, and camera calibration. This course also includes a laboratory component to be conducted in the Robot Realization Laboratory in the Engineering Annex Building.",Should allow 142 as prereq,
+RoboticsRequired,ENAE 450,Robotics Programming,Existing,YES,"This practical robotics class teaches practical skills to build, control, and deploy robotic systems. Interdisciplinary groups of students develop real-world robotic systems. The first 10 weeks of the lab are devoted to 5 pre-programmed experiments. The remainder of the lab is devoted to student projects. Students work in teams of 2, preferably with each student coming from a different background in engineering. There are 2 weekly lectures. The emphasis of the class is entirely on making a real robot do what you want it to do. In the first experiment, students perform a simple servomechanism experiment, where students control a single joint of a robot. We vary the weight on the movable rod to simulate the effects of the changing inertia due to outer segments moving. Next, we have the students directly control several joints of a robot arm. The third experiment is to control the position and orientation of the end effector. A fourth experiment deals with grasping. A fifth experiment deals with the position and orientation of a wheeled robot. ",,
+RoboticsRequired,CMSC 477,Robotics Perception and Planning,Existing,YES,"This course teaches the fundamentals of robot perception and robot path planning. The syllabus and course is divided into two segments, as per the major aspects involved in robotics. There will be lectures on (a) planning and control and (b) perception, with projects and homework. The syllabus includes the following: Motion Planning Introduction, Rigid Body Transformations, Velocity, Velocity Dynamics, Vehicle Controls, Graph Based Planning, Sampling Based Planning, Trajectory Planning, Navigation, Baeyesian and Kalman Filtering, Camera Model and Calibration, Projective Geometry, Visual Perception features, Optical Flow, Pose Estimation, 3D Velocities, Basics of Machine Learning, Structure from Motion, Visual Odometry, and Recognition and Learning. There are two examinations, 3 projects in multiple phases, and two homeworks. The class uses robots, mobile platforms with sensors and effectors. Drone experiments are done in simulation or in the Iribe Drone Lab, space permitting.",,
+RoboticsRequired,ENEE 467,Robotics Project Laboratory,Existing,YES,"This practical robotics class teaches practical skills to build, control, and deploy robotic systems. Interdisciplinary groups of students develop real-world robotic systems. The first 10 weeks of the lab are devoted to 5 pre-programmed experiments. The remainder of the lab is devoted to student projects. Students work in teams of 2, preferably with each student coming from a different background in engineering. There are 2 weekly lectures. The emphasis of the class is entirely on making a real robot do what you want it to do. In the first experiment, students perform a simple servomechanism experiment, where students control a single joint of a robot. We vary the weight on the movable rod to simulate the effects of the changing inertia due to outer segments moving. Next, we have the students directly control several joints of a robot arm. The third experiment is to control the position and orientation of the end effector. A fourth experiment deals with grasping. A fifth experiment deals with the position and orientation of a wheeled robot. ",,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+RoboticsElectives,CMSC 422,Intro to Machine Learning,,,,,
+RoboticsElectives,CMSC 426,Image Processing,,,,,
+RoboticsElectives,CMSC498E,Selected Topics in Computer Science; Robotics,Existing,,,,
+RoboticsRequired,AI 461,Multiagent Systems,New,,,,
+RoboticsElectives,AI 427,Reinforcement Learning,New,,,,
+,,,,,,,
+,,,,,,,
+AlgorithmsRequired,AI 461,Multiagent Systems,New,,,,
+AlgorithmsRequired,AI 427,Reinforcement Learning,New,,,,
+AlgorithmsRequired,CMSC 472,Introduction to Deep Learning,Existing,,,,
+AlgorithmsRequired,CMSC 422,Introduction to Machine Learning,Existing,,,,
+,,,,,,,
+,,,,,,,
+AlgorithmsElective,AI 429,Multimodal Generation,Existing,,,,
+AlgorithmsElective,CMSC 426,Computer Vision,Existing,,,,
+AlgorithmsElective,CMSC 470,Natural Language Processing,Existing,,,,
+AlgorithmsElective,CMSC 477,Robotics Perception and Planning,Existing,,,,
+AlgorithmsElective,CMSC 401,Algorithms for Geospatial Computing,Existing,,,,
+AlgorithmsElective,CMSC 454,Algorithms for Data Science,Existing,,,,
+AlgorithmsElective,CMSC 426,Image Processing,Existing,,,,
