@@ -288,15 +288,58 @@ def dependency_graph_from_df(courses_df: DataFrame, graph: Dict[str, Dict[str, I
     
     return graph
 
-def latex_format_course(values, skills, remove_empty_description=False):
+def format_prereq_from_skills(prereq_to_print, skills, courses):
+
+    if len(skills[raw_topics.ID==prereq_to_print].Dependencies) == 0:
+        return prereq_to_print
+    
+    prereqs = defaultdict(set)
+    for prereq_set in skills[raw_topics.ID==prereq_to_print].Dependencies:
+        for prereq in prereq_set.split(","):
+            prereqs[prereq]
+
+    for prereq in prereqs:
+        for course in courses[courses.Skill==prereq].Course:
+            prereqs[prereq].add(course)
+
+    prereq_string = []
+    for prereq in prereqs:
+        prereq_string.append(" OR ".join(prereqs[prereq]))
+
+    return " AND ".join(prereq_string)
+
+def latex_format_course(values, skills, courses, remove_empty_description=False):
+    skill = values["Skill"]
     description = values["Description"]
 
     value = "\\item \\textbf{%s (%s)}" % (values["Title"], values["Course"])
     if description and not isinstance(description, float):
         value += ": " + description
 
-    if not isinstance(values["Prereqs"], float):
-        value += " [Prereqs: %s]" % values["Prereqs"]
+    prereq_string = values["Prereqs"]
+
+    # This can probably be refactored, but no time to do that right now
+    if not isinstance(prereq_string, float):
+        if "," in prereq_string:
+            prereq_string = "(" + ") AND (".join(format_prereq_from_skills(x, skills, courses) for x in prereq_string.split(",")) + ")"
+        else:
+            prereq_string = format_prereq_from_skills(prereq_string, skills, courses)
+
+    else:
+        # Look up prereq from skills list instead
+        
+        if len(skills[skills.ID == skill].Dependencies) > 0:
+            prereq_string = list(skills[skills.ID == skill].Dependencies)[0]
+            if prereq_string == "ROOT":
+                prereq_string = ""
+            elif "," in prereq_string:
+                prereq_string = "(" + ") AND (".join(format_prereq_from_skills(x, skills, courses) for x in prereq_string.split(",")) + ")"
+            else:
+                prereq_string = format_prereq_from_skills(prereq_string, skills, courses)
+        else:    
+            prereq_string = ""
+        
+    value += prereq_string
 
     return value
     
@@ -304,7 +347,7 @@ def latex_format_course(values, skills, remove_empty_description=False):
 def generate_readable_courses_given_status(raw_courses, status, skills):
     yield "\\begin{enumerate}"
     for row, values in raw_courses[raw_courses["Status"]==status].drop_duplicates(subset=['Course']).sort_values(by='Course').iterrows():
-        formatted = latex_format_course(values, skills)
+        formatted = latex_format_course(values, skills, raw_courses)
         if formatted:
             yield formatted
     yield "\\end{enumerate}"
