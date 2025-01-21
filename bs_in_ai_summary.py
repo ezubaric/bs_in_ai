@@ -288,7 +288,7 @@ def dependency_graph_from_df(courses_df: DataFrame, graph: Dict[str, Dict[str, I
     
     return graph
 
-def latex_format_course(values, remove_empty_description=False):
+def latex_format_course(values, skills, remove_empty_description=False):
     description = values["Description"]
 
     value = "\\item \\textbf{%s (%s)}" % (values["Title"], values["Course"])
@@ -296,26 +296,26 @@ def latex_format_course(values, remove_empty_description=False):
         value += ": " + description
 
     if not isinstance(values["Prereqs"], float):
-        value += "[Prereqs: %s]" % values["Prereqs"]
+        value += " [Prereqs: %s]" % values["Prereqs"]
 
     return value
     
     
-def generate_readable_courses_given_status(raw_courses, status):
+def generate_readable_courses_given_status(raw_courses, status, skills):
     yield "\\begin{enumerate}"
     for row, values in raw_courses[raw_courses["Status"]==status].drop_duplicates(subset=['Course']).sort_values(by='Course').iterrows():
-        formatted = latex_format_course(values)
+        formatted = latex_format_course(values, skills)
         if formatted:
             yield formatted
     yield "\\end{enumerate}"
 
-def generate_readable_courses(raw_courses):
+def generate_readable_courses(raw_courses, skills):
     statuses = set(raw_courses["Status"])
 
     for status in statuses:
         with open("course_descriptions/%s.tex" % status, 'w') as outfile:
             outfile.write(kHEADER)
-            lines = "\n".join(generate_readable_courses_given_status(raw_courses, status))
+            lines = "\n".join(generate_readable_courses_given_status(raw_courses, status, skills))
             outfile.write(lines)
 
 def write_schedule(schedule, filename):
@@ -385,4 +385,4 @@ if __name__ == "__main__":
     
     write_tables(raw_topics, raw_courses, topo)
 
-    generate_readable_courses(raw_courses)
+    generate_readable_courses(raw_courses, raw_topics)
