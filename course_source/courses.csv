@@ -141,8 +141,8 @@ Semester-long project course in which each student will identify and carry out a
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
-SocietalRequired,GEOG398E,Special Topics in Geography; Introduction to Spatial Artificial Intelligence,Existing,Yes,"An introductory course to spatial artificial intelligence (AI), providing a big picture of spatial AI applications (e.g., Google Maps, Uber/Lyft, Earth observation, smart cities, autonomous vehicles), techniques, platforms, trends, debates, etc. The course will cover basics of AI, identify challenges faced by AI techniques in the context of spatial data and applications, and introduce spatial-aware AI methods to address them. AI topics include but are not limited to: spatial data models and knowledge representation, pattern mining, machine learning, perception, planning, etc. Students are expected to have a broad understanding of spatial A concepts, develop intuitions and insights to AI techniques, and have some hands-on experience (Python) at the end of the course.",,
-SocietalRequired,AI 460,AI and Life of Great Cities ,New,YES,"""AI, Data Science and Cities"" explores the transformative role of artificial intelligence
+SocietyRequired,GEOG 398E,Special Topics in Geography; Introduction to Spatial Artificial Intelligence,Existing,YES,"An introductory course to spatial artificial intelligence (AI), providing a big picture of spatial AI applications (e.g., Google Maps, Uber/Lyft, Earth observation, smart cities, autonomous vehicles), techniques, platforms, trends, debates, etc. The course will cover basics of AI, identify challenges faced by AI techniques in the context of spatial data and applications, and introduce spatial-aware AI methods to address them. AI topics include but are not limited to: spatial data models and knowledge representation, pattern mining, machine learning, perception, planning, etc. Students are expected to have a broad understanding of spatial A concepts, develop intuitions and insights to AI techniques, and have some hands-on experience (Python) at the end of the course.",,
+SocietyRequired,AI 460,AI and Life of Great Cities ,New,YES,"""AI, Data Science and Cities"" explores the transformative role of artificial intelligence
 and data science in shaping urban environments, from smart infrastructure to
 data-driven policymaking. Students will learn how to develop and apply AI algorithms
 and data science pipelines to enhance mobility, sustainability, and governance while
@@ -151,7 +151,7 @@ projects, and interdisciplinary discussions, the course equips students with the
 and analytical skills needed to design AI- and data-driven urban solutions. By the end,
 students will critically assess the potential and limitations of AI and Data Science in
 building more resilient, inclusive, and intelligent cities.",,
-SocietalElective,AI 491,AI Clinic,New,YES,"The AI clinic aims to become the go-to resource for assisting local Maryland
+SocietyElectives,AI 491,AI Clinic,New,YES,"The AI clinic aims to become the go-to resource for assisting local Maryland
 governments and small organizations in their procurement processes for AI tools. The
 idea behind the AI Clinic is inspired by legal clinics present across many law schools in
 the US as well as by the Clinic to End Tech Abuse (CETA) at Cornell Tech. The AI Clinic
@@ -169,16 +169,16 @@ makers and small organizations on how to use different types of AI tools, among 
 Values-Centered AI initiative, UMD Grand Challenges. This could easily be an
 INST 4XX, but if there is interest, it could be made an AI course and potentially
 share it with the BA in AI)",
-SocietalRequired,INST 366,"Privacy, Security and Ethics for Big Data",Existing,,,,
-SocietalRequired,INST401 ,Design and Human Disability and Aging,Existing,,,Would be good to also have CS HCI as possible prereq,
-SocietalRequired,CMSC401,Algorithms for Geospatial Computing,Existing,,,,
+SocietyRequired,INST 366,"Privacy, Security and Ethics for Big Data",Existing,YES,,,
+SocietyRequired,INST401 ,Design and Human Disability and Aging,Existing,YES,,Would be good to also have CS HCI as possible prereq,
+SocietyRequired,CMSC401,Algorithms for Geospatial Computing,Existing,YES,,,
 ,,,,,,,
-SocietalElective,SOCY105,Understanding Contemporary Social Problems - Frameworks for Critical Thinking and Strategies for Solutions,Existing,,,,
+SocietalElective,SOCY105,Understanding Contemporary Social Problems - Frameworks for Critical Thinking and Strategies for Solutions,Existing,YES,,,
 ,,,,,,,
-SocietalElective,PLCY201,Public Leaders and Active Citizens,Existing,,,,
-SocietalElective,PLCY215,Innovation and Social Change: Creating Change for Good,Existing,,,,
-SocietalElective,PLCY240,"Ethical, Policy and Social Implications for Science and Technology",Existing,,,,
-SocietalElective,ENME 444,Assistive Robotics,Existing,,,,
+SocietyElectives,PLCY201,Public Leaders and Active Citizens,Existing,,,,
+SocietyElectives,PLCY215,Innovation and Social Change: Creating Change for Good,Existing,,,,
+SocietyElectives,PLCY240,"Ethical, Policy and Social Implications for Science and Technology",Existing,,,,
+SocietyElectives,ENME 444,Assistive Robotics,Existing,,,,
 RoboticsElective,ENME  444,Assistive Robotics,Existing,,,,
 ,,,,,,,
 RoboticsRequired,ENME 480,Introduction to Robotics,Existing,YES,"This course is an introductory course to the robotics minor and educates students in the elementary concepts of robotics. The topics covered in the course include mathematics of rigid motion, rotations, translations, homogeneous transformations, forward kinematics, inverse kinematics, velocity kinematics, geometric Jacobian, analytical Jacobian, motion planning, trajectory generation, independent joint control, linear control methods such as PD, PID, actuator dynamics, feedforward control for trajectory tracking, force control, basic computer vision concepts including thresholding, image segmentation, and camera calibration. This course also includes a laboratory component to be conducted in the Robot Realization Laboratory in the Engineering Annex Building.",Should allow 142 as prereq,
@@ -188,23 +188,23 @@ RoboticsRequired,ENEE 467,Robotics Project Laboratory,Existing,YES,"This practic
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
-RoboticsElectives,CMSC 422,Intro to Machine Learning,,,,,
-RoboticsElectives,CMSC 426,Image Processing,,,,,
-RoboticsElectives,CMSC498E,Selected Topics in Computer Science; Robotics,Existing,,,,
-RoboticsRequired,AI 461,Multiagent Systems,New,,,,
-RoboticsElectives,AI 427,Reinforcement Learning,New,,,,
+RoboticsElectives,CMSC 422,Intro to Machine Learning,Existing,YES,TEMP,,
+RoboticsElectives,CMSC 426,Image Processing,Existing,YES,TEMP,,
+RoboticsElectives,CMSC498E,Selected Topics in Computer Science; Robotics,Existing,YES,TEMP,,
+RoboticsRequired,AI 461,Multiagent Systems,New,YES,TEMP,,
+RoboticsElectives,AI 427,Reinforcement Learning,New,YES,TEMP,,
 ,,,,,,,
 ,,,,,,,
-AlgorithmsRequired,AI 461,Multiagent Systems,New,,,,
-AlgorithmsRequired,AI 427,Reinforcement Learning,New,,,,
-AlgorithmsRequired,CMSC 472,Introduction to Deep Learning,Existing,,,,
-AlgorithmsRequired,CMSC 422,Introduction to Machine Learning,Existing,,,,
+AlgorithmsRequired,AI 461,Multiagent Systems,New,YES,TEMP,,
+AlgorithmsRequired,AI 427,Reinforcement Learning,New,YES,TEMP,,
+AlgorithmsRequired,CMSC 472,Introduction to Deep Learning,Existing,YES,TEMP,,
+AlgorithmsRequired,CMSC 422,Introduction to Machine Learning,Existing,YES,TEMP,,
 ,,,,,,,
 ,,,,,,,
-AlgorithmsElective,AI 429,Multimodal Generation,Existing,,,,
-AlgorithmsElective,CMSC 426,Computer Vision,Existing,,,,
-AlgorithmsElective,CMSC 470,Natural Language Processing,Existing,,,,
-AlgorithmsElective,CMSC 477,Robotics Perception and Planning,Existing,,,,
-AlgorithmsElective,CMSC 401,Algorithms for Geospatial Computing,Existing,,,,
-AlgorithmsElective,CMSC 454,Algorithms for Data Science,Existing,,,,
-AlgorithmsElective,CMSC 426,Image Processing,Existing,,,,
+AlgorithmsElectives,AI 429,Multimodal Generation,Existing,YES,TEMP,,
+AlgorithmsElectives,CMSC 426,Computer Vision,Existing,YES,TEMP,,
+AlgorithmsElectives,CMSC 470,Natural Language Processing,Existing,YES,TEMP,,
+AlgorithmsElectives,CMSC 477,Robotics Perception and Planning,Existing,YES,TEMP,,
+AlgorithmsElectives,CMSC 401,Algorithms for Geospatial Computing,Existing,YES,TEMP,,
+AlgorithmsElectives,CMSC 454,Algorithms for Data Science,Existing,YES,TEMP,,
+AlgorithmsElectives,CMSC 426,Image Processing,Existing,YES,TEMP,,

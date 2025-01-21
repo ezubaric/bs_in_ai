@@ -111,7 +111,7 @@ def create_course_sequence(topological_sort, prerequisites, priorities, topics, 
                 # If we don't find flagged courses, take all of them
                 candidates = courses[courses["Skill"]==topic_to_add]
 
-            assert len(candidates) >= requirement, "Not enough courses (%i) to satisfy topic %s" % (requirement, topic_to_add)
+            assert len(candidates) >= requirement, "Not enough courses (%i) to satisfy topic %s.  Have: %s" % (requirement, topic_to_add, " ".join(candidates["Course"]))
             courses_to_add = list(candidates["Course"])
             if len(candidates) > requirement:
                 courses_to_add = random.sample(courses_to_add, requirement)
