@@ -338,8 +338,9 @@ def latex_format_course(values, skills, courses, remove_empty_description=False)
                 prereq_string = format_prereq_from_skills(prereq_string, skills, courses)
         else:    
             prereq_string = ""
-        
-    value += prereq_string
+
+    if prereq_string != "":
+        value += " Prereqs: %s" % prereq_string
 
     return value
     
