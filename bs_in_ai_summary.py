@@ -297,6 +297,8 @@ def latex_format_course(values, remove_empty_description=False):
 
     if not isinstance(values["Prereqs"], float):
         value += "[Prereqs: %s]" % values["Prereqs"]
+
+    return value
     
     
 def generate_readable_courses_given_status(raw_courses, status):
