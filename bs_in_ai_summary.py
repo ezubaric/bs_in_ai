@@ -293,9 +293,10 @@ def latex_format_course(values, remove_empty_description=False):
 
     value = "\\item \\textbf{%s (%s)}" % (values["Title"], values["Course"])
     if description and not isinstance(description, float):
-        return value + ": " + description
-    elif not remove_empty_description:
-        return value 
+        value += ": " + description
+
+    if not isinstance(values["Prereqs"], float):
+        value += "[Prereqs: %s]" % values["Prereqs"]
     
     
 def generate_readable_courses_given_status(raw_courses, status):
