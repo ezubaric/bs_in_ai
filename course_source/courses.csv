@@ -1,147 +1,150 @@
-Skill,Course,Title,Status,IncludeInSchedule,Description,Notes,Prereqs
-Programming1,CMSC 141,Programming with Purpose I: Data-Centric Computing,Refocus,YES,"This course is an introduction to computing and programming through the lens of data. It aims to give you ways of thinking about solving problems using computation. Students will learn to write programs to process both tabular and structured data, to assess programs both experimentally and theoretically, to apply basic data science concepts, and to discuss big ideas around the communication, use, and social impacts of digital information.",https://dcic-world.org/2022-01-25/index.html,
-Programming1,CMSC 131,Object-Oriented Programming I,Existing,,Introduction to programming and computer science. Emphasizes understanding and implementation of applications using object-oriented techniques. Develops skills such as program design and testing as well as implementation of programs using a graphical IDE. Programming done in Java.,,
-,,,,,,,
-Programming2,CMSC 142,Data Structures and Algorithms,Refocus,YES,"This course explains the concepts and techniques required to write programs that can handle large amounts of data efficiently. Project-oriented and classroom-tested, it presents a number of important algorithms—supported by motivating examples—that bring meaning to the problems faced by computer programmers. The idea of computational complexity is introduced, demonstrating what can and cannot be computed efficiently at scale, helping programmers make informed judgements about the algorithms they use. ",https://kentdlee.github.io/CS2Plus/build/html/index.html,"CMSC141,CMSC131,INST326"
-Programming2,CMSC 132,Object-Oriented Programming II,Existing,,"Introduction to use of computers to solve problems using software engineering principles. Design, build, test, and debug medium -size software systems and learn to use relevant tools. Use object-oriented methods to create effective and efficient problem solutions. Use and implement application programming interfaces (APIs). Programming done in Java.",,"MATH140,CMSC131"
+Skill,Course,Title,Status,IncludeInSchedule,Description,Notes,Prereqs,Include in Budget,Unit,Year Typically in Schedule,PTK or TTK,Steady State,Notes,,,,#VALUE!
+Programming1,CMSC 141,Programming with Purpose I: Data-Centric Computing,Refocus,YES,"This course is an introduction to computing and programming through the lens of data. It aims to give you ways of thinking about solving problems using computation. Students will learn to write programs to process both tabular and structured data, to assess programs both experimentally and theoretically, to apply basic data science concepts, and to discuss big ideas around the communication, use, and social impacts of digital information.",https://dcic-world.org/2022-01-25/index.html,,1,CS,1,PTK,0.75,Assume some students will come in with other programming,,,,CS_PTK_New_1
+Programming1,CMSC 131,Object-Oriented Programming I,Existing,,Introduction to programming and computer science. Emphasizes understanding and implementation of applications using object-oriented techniques. Develops skills such as program design and testing as well as implementation of programs using a graphical IDE. Programming done in Java.,,,0,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Programming2,CMSC 142,Data Structures and Algorithms,Refocus,YES,"This course explains the concepts and techniques required to write programs that can handle large amounts of data efficiently. Project-oriented and classroom-tested, it presents a number of important algorithms—supported by motivating examples—that bring meaning to the problems faced by computer programmers. The idea of computational complexity is introduced, demonstrating what can and cannot be computed efficiently at scale, helping programmers make informed judgements about the algorithms they use. ",https://kentdlee.github.io/CS2Plus/build/html/index.html,Programming1,1,CS,1,PTK,0.9,,,,,CS_PTK_New_1
+Programming2,CMSC 132,Object-Oriented Programming II,Existing,,"Introduction to use of computers to solve problems using software engineering principles. Design, build, test, and debug medium -size software systems and learn to use relevant tools. Use object-oriented methods to create effective and efficient problem solutions. Use and implement application programming interfaces (APIs). Programming done in Java.",,Programming1,0,,,,,,,,,
 Programming1,INST 326,Object-Oriented Programming for Information Science,Existing,,"An introduction to programming, emphasizing understanding and
 implementation of applications using object-oriented techniques. Topics to
 be covered include program design and testing as well as implementation of
-programs.",,INST126
-,,,,,,,
-Calc1,MATH 340,"Multivariable Calculus, Linear Algebra and Differential Equations I (Honors)",Existing,,"This is the first semester of the two-semester honors sequence Math 340-341 which gives a unified and enriched treatment of multivariable calculus, linear algebra, and ordinary differential equations, with supplementary material from differential geometry, Fourier series and calculus of variations.","Students completing Math 340-341 will have covered the material of Math 240, 241 and 246 and may not also receive credit for Math 240, 241 or 246. Students completing only Math 340 with a grade of C or better will satisfy the math degree requirement for Math 241 and may not also receive credit for Math 241. Math majors may not use 340-341 to satisfy any upper-division requirement.",
-,,,,,,,
-,,,,,,,
-Calc1,MATH 140,Calculus I,Existing,YES,"Introduction to calculus, including functions, limits, continuity, derivatives and applications of the derivative, sketching of graphs of functions, introduction to definite and indefinite integrals, and calculation of area. The course is especially recommended for science and mathematics majors. Credit will be granted for only one of the following: MATH 140 or MATH 136 or MATH 120.",,
-Calc2,MATH 141,Calculus II,Existing,YES,"Continuation of MATH140, including techniques of integration, improper integrals, applications of integration (such as volumes, work, arc length, moments), inverse functions, exponential and logarithmic functions, sequences and series.",,MATH140
-Discrete,CMSC 250,Discrete Structures,Existing,YES,"Fundamental mathematical concepts related to computer science, including finite and infinite sets, relations, functions, and propositional logic. Introduction to other techniques, modeling and solving problems in computer science. Introduction to permutations, combinations, graphs, and trees with selected applications.","Requires 141, not 140",
+programs.",,INST126,0,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Calc1,MATH 340,"Multivariable Calculus, Linear Algebra and Differential Equations I (Honors)",Existing,,"This is the first semester of the two-semester honors sequence Math 340-341 which gives a unified and enriched treatment of multivariable calculus, linear algebra, and ordinary differential equations, with supplementary material from differential geometry, Fourier series and calculus of variations.","Students completing Math 340-341 will have covered the material of Math 240, 241 and 246 and may not also receive credit for Math 240, 241 or 246. Students completing only Math 340 with a grade of C or better will satisfy the math degree requirement for Math 241 and may not also receive credit for Math 241. Math majors may not use 340-341 to satisfy any upper-division requirement.",,0,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Calc1,MATH 140,Calculus I,Existing,YES,"Introduction to calculus, including functions, limits, continuity, derivatives and applications of the derivative, sketching of graphs of functions, introduction to definite and indefinite integrals, and calculation of area. The course is especially recommended for science and mathematics majors. Credit will be granted for only one of the following: MATH 140 or MATH 136 or MATH 120.",,,0,,,,,,,,,
+Calc2,MATH 141,Calculus II,Existing,YES,"Continuation of MATH140, including techniques of integration, improper integrals, applications of integration (such as volumes, work, arc length, moments), inverse functions, exponential and logarithmic functions, sequences and series.",,MATH140,0,,,,,,,,,
+Discrete,CMSC 250,Discrete Structures,Existing,YES,"Fundamental mathematical concepts related to computer science, including finite and infinite sets, relations, functions, and propositional logic. Introduction to other techniques, modeling and solving problems in computer science. Introduction to permutations, combinations, graphs, and trees with selected applications.","Requires 141, not 140",,0,,,,,,,,,
 Discrete,DATA 250,Discrete Mathematics,Existing,,"The art and science of discrete mathematics (not Calculus) and rigorous arguments related to
 programming and data. Logic, set theory, and formal proofs will be covered in the first portion of the
 course, and the second portion will be basic linear algebra, including matrices and systems of equations.
 Emphasis on examples and applications so there will be some programming and other uses of the
-computer. Classtime consists of lectures, group work, and other classwork.",,
+computer. Classtime consists of lectures, group work, and other classwork.",,,1,MATH,2,EXT,0.75,Assume most students will take this version,,,,MATH_EXT_Existing_2
 Ethics,PHIL 211,AI and Ethics,Existing,YES,"An introduction to a major subfield of contemporary Philosophy, namely applied ethics, and the experience of using some major tools in the practice of philosophy more generally, namely, the construction and formal evaluation of arguments, conceptual analysis, the use of thought experiments, and clear, direct and persuasive writing. Learning how to execute the latter will involve an intense iterative process.
 The substantive focus of the course will be the ethical evaluation of AI in some of its current and potentially future incarnations. We’ll examine algorithmic opacity, algorithmic bias
 and decision-making, autonomous weapons systems, human-robot interaction, and artificial
-moral agents, in order to uncover what, if any, ethical issues they give rise to.",,
-Linalg,MATH 461,Linear Algebra for Scientists and Engineers,Existing,,"The course provides an introduction to linear algebra and matrix theory. It is intended primarily for engineering students. This course cannot be used toward the upper level math requirements for MATH/STAT majors. Credit will be granted for only one of the following: MATH 240, MATH 341, or MATH 461.",,MATH 141
-Linalg,DATA 250,Discrete Mathematics,Existing,," Introduction to basic discrete mathematical and linear algebraic structures and use of these mathematical structures to solve programming problems. Logic, set theory, formal proof methodology, functions, and basic linear algebra.",,
-Linalg,MATH 240,Introduction to Linear Algebra,Existing,,"Basic concepts of linear algebra: vector spaces, applications to line and plane geometry, linear equations and matrices, similar matrices, linear transformations, eigenvalues, determinants and quadratic forms. All sections of the course will use the software system MATLAB. Credit will be granted for only one of the following: MATH 240 or MATH 341 or MATH 461.",,MATH 141
-Linalg,MATH 241,Calculus III,Existing,,"An introduction to multivariable calculus, including vectors and vector-valued functions, partial derivatives and applications of partial derivatives (such as tangent planes and Lagrange multipliers), multiple integrals, volume, surface area, and the classical theorems of Green, Stokes and Gauss. All sections of the course will use the software package MATLAB. Credit will be granted for only one of the following: MATH 241 or MATH 340.",,
-Linalg,MATH 341,"Multivariable Calculus, Linear Algebra and Differential Equations II",Existing,YES,"This course is a continuation of MATH 340. The honors sequence MATH 340-341 covers roughly the same material of MATH 240, 241, and 246, but in greater depth and rigor. This semeseter will begin with remaining material from Multivariable Calculus (MATH 241) on extrema of functions of several variables and Lagrange multipliers. The remainder of the semester, and the bulk of the course, is then devoted to the theory of Ordinary Differential Equations (MATH 246).",,
-,,,,,,,
-Fairness,INST 204,Designing Fair Systems,Existing,YES,"Reviews how specific values are built into different automated decision-making systems as an inevitable result of constructing mechanisms meant to produce specific outcomes. These values create differential outcomes for the different people enmeshed in these systems, but both these values and these systems can be changed to support different values and different outcomes. The class serves as an introduction to the emerging field of algorithmic bias that bridges the disciplines of information science, computer science, law, policy, philosophy, sociology, urban planning, and others.",,
-Language,LING 260,Meaning through Language: Why are we so good at it? ,Existing,YES,"What is it about us humans and our languages that allows us to communicate in ways unmatched by other animals or powerful AI models? The question is ancient, but recent decades have seen great progress in the cognitive science of language, while expanding the diversity of languages investigated. We know much more about how languages vary, how they develop in children, how they are encoded in the mind, and relate to other domains of cognition. Major developments in statistical computation and research on animal cognition also illuminate what is (not) possible without the particular structure of the human mind. We bring this all to bear on our Big Question: What makes human language special from the viewpoint of meaning? Students will come to understand the major features of language as a vehicle for complex thought and a tool for communication. They will use this understanding in analyzing common semantic patterns and everyday conversational dynamics.",,
-,,,,,,,
-Classification,INST 414,Data Science Techniques,Existing,,"An exploration of how to extract insights from large-scale datasets. The course will cover the complete analytical funnel from data extraction and cleaning to data analysis and insights interpretation and visualization. The data analysis component will focus on techniques in both supervised and unsupervised learning to extract information from datasets. Topics will include clustering, classification, and regression techniques. Through homework assignments, a project, exams and in-class activities, students will practice working with these techniques and tools to extract relevant information from structured and unstructured data.",,
-Classification,CMSC 320,Introduction to Data Science,Prereq,YES,"An introduction to the data science pipeline, i.e., the end-to-end process of going from unstructured, messy data to knowledge and actionable insights. Provides a broad overview of several topics including statistical data analysis, basic data mining and machine learning algorithms, large-scale data management, cloud computing, and information visualization.",,"CMSC216,CMSC250"
-Classification,DATA 320,Introduction to Data Science,Existing,,"An introduction to data science i.e., the end-to-end process of going from unstructured, messy data to knowledge and actionable insights. Provides a broad overview of several topics including statistical data analysis, basic data mining and machine learning algorithms, large-scale data management, cloud computing, and information visualization.",,
-,,,,,,,
-Sampler,AI 102,Introduction to AI and the Law,Breadth,YES,"This course will examine AI Law and Regulation from the perspective of US Law and industry self-regulation with some discussion of select relevant international law and voluntary frameworks (i.e., EU AI Act and ISO/UN/OECD). Specific topics of US and international law may include: American Legal Process and Procedure, Administrative Law for AI Regulation, Constitutional Law Relationships to AI, Intellectual Property Law (Copyright, Trademark, Patent, and Trade Secret Law), Negligence/Products Liability Law, Privacy Law and Privacy Torts, Fundamentals of Contract Law, Industry Self-Regulation and International Frameworks.",,
-Sampler,AI 103,Introduction to AI and Food,Breadth,YES,"This course will examine the role of AI in American Food.  From how chemical synthesis driven by AI can produce new fertilizers, insecticides, and other tools that can improve the yield and productivity of crops, to using computer vision to monitor livestock, to harvesting crops with robotic agents, this course will explore the role of AI in food production.  Next, the course will cover the role of AI in food storage, transportation, and its trade on commodities markets.  Finally, the course will end with an overview of AI in food preparation, marketing, and helping individuals making nutritional decisions.",,
-Sampler,AI 104,Introduction to AI and Creativity,Breadth,YES,This course will examine the role of AI in creative---particularly visual---pursuits.  Student will learn how to generate and edit images and videos using AI tools and learn the limitations of those tools.  Students will learn how to add additional information to these models and learn how to detect AI-created images and videos.  The final project will be to create a portfolio of artwork assisted by AI tools.,,
-,,,,,,,
+moral agents, in order to uncover what, if any, ethical issues they give rise to.",,,1,PHIL,1,EXT,1,,,,,PHIL_EXT_Existing_1
+Linalg,MATH 461,Linear Algebra for Scientists and Engineers,Existing,,"The course provides an introduction to linear algebra and matrix theory. It is intended primarily for engineering students. This course cannot be used toward the upper level math requirements for MATH/STAT majors. Credit will be granted for only one of the following: MATH 240, MATH 341, or MATH 461.",,MATH 141,0,,,,,,,,,
+Linalg,DATA 250,Discrete Mathematics,Existing,," Introduction to basic discrete mathematical and linear algebraic structures and use of these mathematical structures to solve programming problems. Logic, set theory, formal proof methodology, functions, and basic linear algebra.",,,0,,,,,Covered above,,,,
+Linalg,MATH 240,Introduction to Linear Algebra,Existing,,"Basic concepts of linear algebra: vector spaces, applications to line and plane geometry, linear equations and matrices, similar matrices, linear transformations, eigenvalues, determinants and quadratic forms. All sections of the course will use the software system MATLAB. Credit will be granted for only one of the following: MATH 240 or MATH 341 or MATH 461.",,MATH 141,0,,,,,,,,,
+Linalg,MATH 241,Calculus III,Existing,,"An introduction to multivariable calculus, including vectors and vector-valued functions, partial derivatives and applications of partial derivatives (such as tangent planes and Lagrange multipliers), multiple integrals, volume, surface area, and the classical theorems of Green, Stokes and Gauss. All sections of the course will use the software package MATLAB. Credit will be granted for only one of the following: MATH 241 or MATH 340.",,,0,,,,,,,,,
+Linalg,MATH 341,"Multivariable Calculus, Linear Algebra and Differential Equations II",Existing,YES,"This course is a continuation of MATH 340. The honors sequence MATH 340-341 covers roughly the same material of MATH 240, 241, and 246, but in greater depth and rigor. This semeseter will begin with remaining material from Multivariable Calculus (MATH 241) on extrema of functions of several variables and Lagrange multipliers. The remainder of the semester, and the bulk of the course, is then devoted to the theory of Ordinary Differential Equations (MATH 246).",,,0,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Fairness,INST 204,Designing Fair Systems,Existing,YES,"Reviews how specific values are built into different automated decision-making systems as an inevitable result of constructing mechanisms meant to produce specific outcomes. These values create differential outcomes for the different people enmeshed in these systems, but both these values and these systems can be changed to support different values and different outcomes. The class serves as an introduction to the emerging field of algorithmic bias that bridges the disciplines of information science, computer science, law, policy, philosophy, sociology, urban planning, and others.",,,1,INFO,1,EXT,1,,,,,INFO_EXT_Existing_1
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Classification,INST 414,Data Science Techniques,Existing,,"An exploration of how to extract insights from large-scale datasets. The course will cover the complete analytical funnel from data extraction and cleaning to data analysis and insights interpretation and visualization. The data analysis component will focus on techniques in both supervised and unsupervised learning to extract information from datasets. Topics will include clustering, classification, and regression techniques. Through homework assignments, a project, exams and in-class activities, students will practice working with these techniques and tools to extract relevant information from structured and unstructured data.",,,0,,,,,,,,,
+Classification,CMSC 320,Introduction to Data Science,Prereq,YES,"An introduction to the data science pipeline, i.e., the end-to-end process of going from unstructured, messy data to knowledge and actionable insights. Provides a broad overview of several topics including statistical data analysis, basic data mining and machine learning algorithms, large-scale data management, cloud computing, and information visualization.",,,1,CS,2,PTK,0.9,,,,,CS_PTK_New_2
+Classification,DATA 320,Introduction to Data Science,Existing,,"An introduction to data science i.e., the end-to-end process of going from unstructured, messy data to knowledge and actionable insights. Provides a broad overview of several topics including statistical data analysis, basic data mining and machine learning algorithms, large-scale data management, cloud computing, and information visualization.",,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Sampler,AI 102,Introduction to AI and the Law,New,YES,"This course will examine AI Law and Regulation from the perspective of US Law and industry self-regulation with some discussion of select relevant international law and voluntary frameworks (i.e., EU AI Act and ISO/UN/OECD). Specific topics of US and international law may include: American Legal Process and Procedure, Administrative Law for AI Regulation, Constitutional Law Relationships to AI, Intellectual Property Law (Copyright, Trademark, Patent, and Trade Secret Law), Negligence/Products Liability Law, Privacy Law and Privacy Torts, Fundamentals of Contract Law, Industry Self-Regulation and International Frameworks.",,,1,BSOS,1,EXT,0.3,,,,,BSOS_EXT_New_1
+Sampler,AI 103,Introduction to AI and Food,New,YES,"This course will examine the role of AI in American Food.  From how chemical synthesis driven by AI can produce new fertilizers, insecticides, and other tools that can improve the yield and productivity of crops, to using computer vision to monitor livestock, to harvesting crops with robotic agents, this course will explore the role of AI in food production.  Next, the course will cover the role of AI in food storage, transportation, and its trade on commodities markets.  Finally, the course will end with an overview of AI in food preparation, marketing, and helping individuals making nutritional decisions.",,,1,AG,3,EXT,0.3,,,,,AG_EXT_New_3
+Sampler,AI 104,Introduction to AI and Creativity,New,YES,This course will examine the role of AI in creative---particularly visual---pursuits.  Student will learn how to generate and edit images and videos using AI tools and learn the limitations of those tools.  Students will learn how to add additional information to these models and learn how to detect AI-created images and videos.  The final project will be to create a portfolio of artwork assisted by AI tools.,,,1,IMD,2,EXT,0.3,,,,,IMD_EXT_New_2
+,,,,,,,,,,,,,,,,,
 Compgraphs,AI 216,Efficient Systems for AI Applications,New,YES,"This course introduces students to the computer system fundamentals that underpin AI systems.  Students learn how memory and parameters are organized in low-level systems and the programming techniques necessary to effeciently update those parameters on large datasets.  Students also learn how the mathematical fundamentals of AI algorithms are translated into learned parameters given large datasets.  Finally, students learn how modern algorithms update those parameters effeciently with large datasets that exceed the capacity of individual computers. [Linear algebra is required for this course but may be taken concurrently.]","Would introduce a lower-level language (most likely C, barring a Rusty sea change) and memory management (most likely for GPU).  They would also need to learn how to abstract these concepts into a computation graph with automatic differentiation (assuming this remains the primary paradigm for AI moving forward).  If not, the course would need to be updated to reflect this.  The description is meant to reflect this with sufficient abstraction to cover changes in the short to medium term.  To ensure the course description is future-proofed (as much as possible), I gave myself the exercise of making sure it would work as a description both for what I'm currently thinking of and for the 2010 course I taught on using MapReduce to learn (what we thought at the time) were n-gram large language models.  
 
-One thing I'm not overjoyed about is that we'd almost certainly have to use CUDA, which is fairly proprietary.  But I don't see a viable alternative.",
-,,,,,,,
-GenAIRequired,AI 220,Measuring Preferences and Rankings,New,YES,"A key component of modern AI systems is knowing when one AI system (or its output) is better than another.  Many of the mathematical tools used to make these decisions come from psychology.  This course introduces the mathematical tools that form the foundation of these techniques, teaches students to fit these models to data, and then explains how these models are used in modern AI systems and in AI evaluations.",,
-,,,,,,,
-,,,,,,,
-Algorithms,CMSC 351,Algorithms,Prereq,YES,"A systematic study of the complexity of some elementary algorithms related to sorting, graphs and trees, and combinatorics. Algorithms are analyzed using mathematical techniques to solve recurrences and summations.",Would want to change prereq to require 216 or AI 216,
-,,,,,,,
-,,,,,,,
-Introsem,AI 101,The Current AI Moment,Shared,YES,"This course introduces students to the current moment of AI.  It introduces the historical analogs of AI (e.g., the upheaval of mechanize agricultural, assembly lines, and information technologies) and compares and contrasts how AI is different.  It provides a non-technical history of the major AI developments of the last hundred years and introduces to societal, ethical, economic, and technical questions that are a part of the AI moment.",,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-Gofai,AI 221,Classical AI Algorithms,Level,YES,"This course introduces the foundation of AI theory and practice.  Students learn how to search over structured representations to find optimal solutions to planning problems, how to represent real-world problems in graph structures or game trees, and how to represent and solve AI problems using first-order logic.  Credit only granted to one of 421 or 221.","This course covers much of the same content as 421.  Students would have the option of taking either (and we'd share this course with the BA).  However, it wouldn't be as difficult (or as deep as) 421.  Students wouldn't be able to get credit for both.",
-Gofai,CMSC 421,Introduction to Artificial Intelligence,Prereq,,"Introduces a range of ideas and methods in AI, varying semester to semester but chosen largely from: automated heuristic search, planning, games, knowledge representation, logical and statistical inference, learning, natural language processing, vision, robotics, cognitive modeling, and intelligent agents. Programming projects will help students obtain a hands-on feel for various topics.  Credit only granted to one of 421 or 221.","This seems fine to maintain as is, given 221 is another option.",Prerequisite: Minimum grade of C- in CMSC351 and CMSC330; and permission of CMNS-Computer Science department. 
-Neural,CMSC 472,Introduction to Deep Learning,Prereq,,"This course is an elementary introduction to a machine learning technique called deep learning, as well as its applications to a variety of domains. Along the way, the course also provides an intuitive introduction to machine learning such as simple models, learning paradigms, optimization, overfitting, importance of data, training caveats, etc. The assignments explore key concepts and simple applications, and the final project allows an in-depth exploration of a particular application area. By the end of the course, you will have an overview on the deep learning landscape and its applications. You will also have a working knowledge of several types of neural networks, be able to implement and train them, and have a basic understanding of their inner workings. Credit only granted to one of 472 or 372.",,"CMSC320, CMSC330, and CMSC351, MATH240"
-Neural,AI 372,Introduction to Neural Modeling,Level,YES,"An introduction to deep learning, a machine learning technique, as well as its applications to a variety of domains. Provides a broad overview of deep learning concepts including neural networks, convolutional neural networks, recurrent neural networks, generative models, and deep reinforcement learning, and an intuitive introduction to basics of machine learning such as simple models, learning paradigms, optimization, overfitting, importance of data, and training caveats.  Credit only granted to one of 472 and 372.",,AI 221
-,,,,,,,
-GenAIRequired,AI 370,Multilingual Text Processing and Evaluation,New,YES,"This course covers the representation and manipulation of linguistic data on computers.  After establishing the fundamentals of byte-level representation and how different languages are represented on a computer, the course discusses the type / token distinction of word use and how this is reflected in computational representations of language and how this is complicated by languages with implicit or ambiguous tokenization.  Finally, this course covers the application of large models (taken as a given) and resources to novel tasks or in novel combinations: how to adapt existing resources to new tasks, how to evaluate how well the models perform, and how to efficiently adapt models to these tasks.  ",,
-GenAIRequired,LING 200,Introductory Linguistics,Existing,YES,"An exploration of the nature of human language. Introduction to the basic concepts and methodology of modern linguistic analysis (sound systems, word formation, sentence structure). Examination of the factors that contribute to dialect differences and the social implications of language variation. Additional topics may include: semantics, pragmatics, language change, writing systems, typology, language universals, comparison with other communication systems.",,
-GenAIRequired,LING 240,Language and Mind,Existing,YES,"The study of language as a cognitive phenomenon. Ways of representing people's knowledge of their native language, ways in which that knowledge is attained naturally by children, and how it is used in speaking and listening. Additional topics may include: animal communication, language and the brain, language and thought.",,
-,,,,,,,
-GenAIElective,LING 311,Syntax I,Existing,YES,"Basic concepts, analytical techniques of generative syntax, relation to empirical limits imposed by viewing grammars as representations of a component of human mind. Aspects of current theories.",,
-GenAIElective,LING 410,Grammar and Meaning,Existing,YES,"The basic notions of semantic theory: reference, quantification, scope relations, compositionality, thematic relations, tense and time, etc. The role these notions play in grammars of natural languages. Properties of logical form and relationship with syntax.",,
-GenAIRequired,AI 429,Multimodal Generation,New,YES,"Introduction to the algorithms that allow the generation of image, sound, video, and other modalities based on instructions, the theory behind joint representations that bridge the divide between description and representation and how they are rendered in the target medium, how to iteratively refine and render the target representations, and how to train and fine-tune the models to be more expressive or cover new concepts.  Discussion of dataset curation, evaluation, detection, and social impact of these algorithms.",,
+One thing I'm not overjoyed about is that we'd almost certainly have to use CUDA, which is fairly proprietary.  But I don't see a viable alternative.",,1,CS,2,PTK,1,,,,,CS_PTK_New_2
+,,,,,,,,,,,,,,,,,
+GenAIRequired,AI 220,Measuring Preferences and Rankings,New,YES,"A key component of modern AI systems is knowing when one AI system (or its output) is better than another.  Many of the mathematical tools used to make these decisions come from psychology.  This course introduces the mathematical tools that form the foundation of these techniques, teaches students to fit these models to data, and then explains how these models are used in modern AI systems and in AI evaluations.",JBG: Return to this,,1,CS,2,PTK,0.2,,,,,CS_PTK_New_2
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Algorithms,CMSC 351,Algorithms,Prereq,YES,"A systematic study of the complexity of some elementary algorithms related to sorting, graphs and trees, and combinatorics. Algorithms are analyzed using mathematical techniques to solve recurrences and summations.",Would want to change prereq to require 216 or AI 216,,1,CS,3,TTK,1,,,,,CS_TTK_New_3
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Introsem,AI 101,The Current AI Moment,Shared,YES,"This course introduces students to the current moment of AI.  It introduces the historical analogs of AI (e.g., the upheaval of mechanize agricultural, assembly lines, and information technologies) and compares and contrasts how AI is different.  It provides a non-technical history of the major AI developments of the last hundred years and introduces to societal, ethical, economic, and technical questions that are a part of the AI moment.",,,1,AI,1,PTK,1,,,,,AI_PTK_New_1
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Gofai,AI 221,Classical AI Algorithms,Level,YES,"This course introduces the foundation of AI theory and practice.  Students learn how to search over structured representations to find optimal solutions to planning problems, how to represent real-world problems in graph structures or game trees, and how to represent and solve AI problems using first-order logic.  Credit only granted to one of 421 or 221.","This course covers much of the same content as 421.  Students would have the option of taking either (and we'd share this course with the BA).  However, it wouldn't be as difficult (or as deep as) 421.  Students wouldn't be able to get credit for both.",,1,CS,2,TTK,0.8,Some students would take the advanced version,,,,CS_TTK_New_2
+Gofai,CMSC 421,Introduction to Artificial Intelligence,Prereq,,"Introduces a range of ideas and methods in AI, varying semester to semester but chosen largely from: automated heuristic search, planning, games, knowledge representation, logical and statistical inference, learning, natural language processing, vision, robotics, cognitive modeling, and intelligent agents. Programming projects will help students obtain a hands-on feel for various topics.  Credit only granted to one of 421 or 221.","This seems fine to maintain as is, given 221 is another option.",Prerequisite: Minimum grade of C- in CMSC351 and CMSC330; and permission of CMNS-Computer Science department. ,1,CS,4,TTK,0.2,Most students take 221,,,,CS_TTK_New_4
+Neural,CMSC 472,Introduction to Deep Learning,Prereq,,"This course is an elementary introduction to a machine learning technique called deep learning, as well as its applications to a variety of domains. Along the way, the course also provides an intuitive introduction to machine learning such as simple models, learning paradigms, optimization, overfitting, importance of data, training caveats, etc. The assignments explore key concepts and simple applications, and the final project allows an in-depth exploration of a particular application area. By the end of the course, you will have an overview on the deep learning landscape and its applications. You will also have a working knowledge of several types of neural networks, be able to implement and train them, and have a basic understanding of their inner workings. Credit only granted to one of 472 or 372.",,"CMSC320, CMSC330, and CMSC351, MATH240",,,,,,,,,,
+Neural,AI 372,Introduction to Neural Modeling,Level,YES,"An introduction to deep learning, a machine learning technique, as well as its applications to a variety of domains. Provides a broad overview of deep learning concepts including neural networks, convolutional neural networks, recurrent neural networks, generative models, and deep reinforcement learning, and an intuitive introduction to basics of machine learning such as simple models, learning paradigms, optimization, overfitting, importance of data, and training caveats.  Credit only granted to one of 472 and 372.",JBG: Come back and reevaluate this,AI 221,1,CS,3,TTK,,,,,,CS_TTK_New_3
+,,,,,,,,,,,,,,,,,
+GenAIRequired,AI 370,Multilingual Text Processing and Evaluation,New,YES,"This course covers the representation and manipulation of linguistic data on computers.  After establishing the fundamentals of byte-level representation and how different languages are represented on a computer, the course discusses the type / token distinction of word use and how this is reflected in computational representations of language and how this is complicated by languages with implicit or ambiguous tokenization.  Finally, this course covers the application of large models (taken as a given) and resources to novel tasks or in novel combinations: how to adapt existing resources to new tasks, how to evaluate how well the models perform, and how to efficiently adapt models to these tasks.  ",,,1,LING,3,EXT,0.2,,,,,LING_EXT_New_3
+GenAIRequired,LING 200,Introductory Linguistics,Existing,YES,"An exploration of the nature of human language. Introduction to the basic concepts and methodology of modern linguistic analysis (sound systems, word formation, sentence structure). Examination of the factors that contribute to dialect differences and the social implications of language variation. Additional topics may include: semantics, pragmatics, language change, writing systems, typology, language universals, comparison with other communication systems.",,,0,,,,,,,,,
+GenAIRequired,LING 240,Language and Mind,Existing,YES,"The study of language as a cognitive phenomenon. Ways of representing people's knowledge of their native language, ways in which that knowledge is attained naturally by children, and how it is used in speaking and listening. Additional topics may include: animal communication, language and the brain, language and thought.",,,1,LING,3,EXT,0.2,,,,,LING_EXT_Existing_3
+,,,,,,,,,,,,,,,,,
+GenAIElective,LING 311,Syntax I,Existing,YES,"Basic concepts, analytical techniques of generative syntax, relation to empirical limits imposed by viewing grammars as representations of a component of human mind. Aspects of current theories.",,,0,,,,,,,,,
+GenAIElective,LING 410,Grammar and Meaning,Existing,YES,"The basic notions of semantic theory: reference, quantification, scope relations, compositionality, thematic relations, tense and time, etc. The role these notions play in grammars of natural languages. Properties of logical form and relationship with syntax.",,,0,,,,,,,,,
+GenAIRequired,AI 429,Multimodal Generation,New,YES,"Introduction to the algorithms that allow the generation of image, sound, video, and other modalities based on instructions, the theory behind joint representations that bridge the divide between description and representation and how they are rendered in the target medium, how to iteratively refine and render the target representations, and how to train and fine-tune the models to be more expressive or cover new concepts.  Discussion of dataset curation, evaluation, detection, and social impact of these algorithms.",,,1,CS,3,TTK,0.2,,,,,CS_TTK_New_3
 GenAIRequired,CMSC 470,Natural Language Processing,Prereq,YES,"Introduction to fundamental techniques for automatically processing and generating natural language with computers. Machine learning techniques, models, and algorithms that enable computers to deal with the ambiguity and implicit structure of natural language. Application of these techniques in a series of assignments designed to address a core application such as question answering or machine translation.
-",Should be default now cover LLMs and LoRA (circa 2024),
-,,,,,,,
-,,,,,,,
-GenAIElective,CMSC 426,Computer Vision,Prereq,YES,"An introduction to basic concepts and techniques in computervision. This includes low-level operations such as image filtering and edge detection, 3D reconstruction of scenes using stereo and structure from motion, and object detection, recognition and classification.",,
-GenAIElective,CMSC 427,Computer Graphics,Prereq,YES,"An introduction to 3D computer graphics, focusing on the underlying building blocks and algorithms for applications such as 3D computer games, and augmented and virtual reality (AR/VR). Covers the basics of 3D image generation and 3D modeling, with an emphasis on interactive applications. Discusses the representation of 3D geometry, 3D transformations, projections, rasterization, basics of color spaces, texturing and lighting models, as well as programming of modern Graphics Processing Units (GPUs). Includes programming projects where students build their own 3D rendering engine step-by-step.",,
-GenAIElective,LING 320,Phonetics,Existing,,,,
-GenAIElective,LING 321,Phonology I,Existing,,,,
-GenAIElective,LING 322,Phonology II,Existing,,,,
-GenAIElective,LING 330,Historical Linguistics,Existing,,,,
-,,,,,,,
-,,,,,,,
-UnspecializedElective,BCHM 477,Biomolecular Measurement and Data Analysis,Existing,,,,
-UnspecializedElective,CHBE 452,Introduction of Machine Learning in Chemical Engineering,Existing,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-UnspecializedElective,CMSC425,Game Programming,Existing,,,,
-,,,,,,,
-UnspecializedElective,CMSC426,Computer Vision,Existing,YES,,,
-,,,,,,,
-UnspecializedElective,CMSC454,Algorithms for Data Science,Existing,YES,,,
-,,,,,,,
-UnspecializedElective,CMSC470,Introduction to Natural Language Processing,Existing,,,,
-,,,,,,,
-UnspecializedElective,CMSC422,Introduction to Machine Learning,Existing,YES,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-UnspecializedElective,CMSC477,Robotics Perception and Planning,Existing,YES,,,
-,,,,,,,
-UnspecializedElective,CMSC498E,Selected Topics in Computer Science; Robotics,Existing,,,,
-,,,,,,,
-UnspecializedElective,CMSC498Y,Selected Topics in Computer Science; Statistical Inference and Machine Learning Methods for Genomics Data,Existing,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-UnspecializedElective,ECON 354,Using Big Data to Solve Economic and Social Problems,Existing,,,,
-,,,,,,,
-UnspecializedElective,ENAE 450,Robotics Programming,Existing,,,,
-,,,,,,,
-UnspecializedElective,ENAE 488O,Topics in Aerospace Engineering; Introduction to Autonomous Multi-Robot Swarms,Existing,,,,
-,,,,,,,
-UnspecializedElective,ENEE 467,Robotics Project Laboratory,Existing,,,,
-,,,,,,,
-UnspecializedElective,ENMA 437,Machine Learning for Materials Science,Existing,,,,
-,,,,,,,
-UnspecializedElective,GEOG398E,Special Topics in Geography; Introduction to Spatial Artificial Intelligence,Existing,,,,
-,,,,,,,
-UnspecializedElective,GEOG461,Machine Learning for Computational Earth Observation Science,Existing,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-UnspecializedElective,IMDM498E,Special Topics in Immersive Media; Creative Experiments with AI,Existing,,,,
-,,,,,,,
-UnspecializedElective,INST461,Emerging Technologies and Risk Management,Existing,YES,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-UnspecializedElective,PSYC431,Human and Animal Intelligence,Existing,,,,
-,,,,,,,
+",Should be default now cover LLMs and LoRA (circa 2024),,1,CS,3,TTK,0.2,,,,,CS_TTK_New_3
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+GenAIElective,CMSC 426,Computer Vision,Prereq,YES,"An introduction to basic concepts and techniques in computervision. This includes low-level operations such as image filtering and edge detection, 3D reconstruction of scenes using stereo and structure from motion, and object detection, recognition and classification.",,,0,,,,,,,,,
+GenAIElective,CMSC 427,Computer Graphics,Prereq,YES,"An introduction to 3D computer graphics, focusing on the underlying building blocks and algorithms for applications such as 3D computer games, and augmented and virtual reality (AR/VR). Covers the basics of 3D image generation and 3D modeling, with an emphasis on interactive applications. Discusses the representation of 3D geometry, 3D transformations, projections, rasterization, basics of color spaces, texturing and lighting models, as well as programming of modern Graphics Processing Units (GPUs). Includes programming projects where students build their own 3D rendering engine step-by-step.",,,0,,,,,,,,,
+GenAIElective,LING 320,Phonetics,Existing,,,,,0,,,,,,,,,
+GenAIElective,LING 321,Phonology I,Existing,,,,,0,,,,,,,,,
+GenAIElective,LING 322,Phonology II,Existing,,,,,0,,,,,,,,,
+GenAIElective,LING 330,Historical Linguistics,Existing,,,,,0,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+UnspecializedElectives,CMSC425,Game Programming,Existing,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+UnspecializedElectives,CMSC426,Computer Vision,Existing,YES,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+UnspecializedElectives,CMSC454,Algorithms for Data Science,Existing,YES,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+UnspecializedElectives,CMSC470,Introduction to Natural Language Processing,Existing,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+UnspecializedElectives,CMSC422,Introduction to Machine Learning,Existing,YES,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+UnspecializedElectives,CMSC477,Robotics Perception and Planning,Existing,YES,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+UnspecializedElectives,CMSC498E,Selected Topics in Computer Science; Robotics,Existing,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+UnspecializedElectives,CMSC498Y,Selected Topics in Computer Science; Statistical Inference and Machine Learning Methods for Genomics Data,Existing,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+UnspecializedElective,IMDM498E,Special Topics in Immersive Media; Creative Experiments with AI,Existing,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+UnspecializedElective,INST461,Emerging Technologies and Risk Management,Existing,YES,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+UnspecializedElective,PSYC431,Human and Animal Intelligence,Existing,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
 UnspecializedRequired,AI 473,Capstone in Artificial Intelligence,New,YES,"Students will be paired with project advisors from the UMD faculty or alternatively, an industry advisor. Students are encouraged to plan for projects results that can be published at academic conferences or will impact academic research.
-Semester-long project course in which each student will identify and carry out a project related to machine learning, with the goal of publishing a research paper or software tool.",,
+Semester-long project course in which each student will identify and carry out a project related to machine learning, with the goal of publishing a research paper or software tool.",,,1,CS,3,TTK,0.4,,,,,CS_TTK_New_3
 GenAIElective,AI 473,Capstone in Artificial Intelligence,New,YES,"Students will be paired with project advisors from the UMD faculty or alternatively, an industry advisor. Students are encouraged to plan for projects results that can be published at academic conferences or will impact academic research.
-Semester-long project course in which each student will identify and carry out a project related to machine learning, with the goal of publishing a research paper or software tool.",,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-SocietyRequired,GEOG 398E,Special Topics in Geography; Introduction to Spatial Artificial Intelligence,Existing,YES,"An introductory course to spatial artificial intelligence (AI), providing a big picture of spatial AI applications (e.g., Google Maps, Uber/Lyft, Earth observation, smart cities, autonomous vehicles), techniques, platforms, trends, debates, etc. The course will cover basics of AI, identify challenges faced by AI techniques in the context of spatial data and applications, and introduce spatial-aware AI methods to address them. AI topics include but are not limited to: spatial data models and knowledge representation, pattern mining, machine learning, perception, planning, etc. Students are expected to have a broad understanding of spatial A concepts, develop intuitions and insights to AI techniques, and have some hands-on experience (Python) at the end of the course.",,
+Semester-long project course in which each student will identify and carry out a project related to machine learning, with the goal of publishing a research paper or software tool.",,,,,,,,,,,,
+SocietyElective,AI 473,Capstone in Artificial Intelligence,New,YES,"Students will be paired with project advisors from the UMD faculty or alternatively, an industry advisor. Students are encouraged to plan for projects results that can be published at academic conferences or will impact academic research.
+Semester-long project course in which each student will identify and carry out a project related to machine learning, with the goal of publishing a research paper or software tool.",,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+SocietyRequired,GEOG 398E,Special Topics in Geography; Introduction to Spatial Artificial Intelligence,Existing,YES,"An introductory course to spatial artificial intelligence (AI), providing a big picture of spatial AI applications (e.g., Google Maps, Uber/Lyft, Earth observation, smart cities, autonomous vehicles), techniques, platforms, trends, debates, etc. The course will cover basics of AI, identify challenges faced by AI techniques in the context of spatial data and applications, and introduce spatial-aware AI methods to address them. AI topics include but are not limited to: spatial data models and knowledge representation, pattern mining, machine learning, perception, planning, etc. Students are expected to have a broad understanding of spatial A concepts, develop intuitions and insights to AI techniques, and have some hands-on experience (Python) at the end of the course.",,,1,GEOG,3,EXT,0.2,,,,,GEOG_EXT_Existing_3
 SocietyRequired,AI 460,AI and Life of Great Cities ,New,YES,"""AI, Data Science and Cities"" explores the transformative role of artificial intelligence
 and data science in shaping urban environments, from smart infrastructure to
 data-driven policymaking. Students will learn how to develop and apply AI algorithms
@@ -150,7 +153,7 @@ also considering ethical, social, and equity challenges. Through case studies, h
 projects, and interdisciplinary discussions, the course equips students with the technical
 and analytical skills needed to design AI- and data-driven urban solutions. By the end,
 students will critically assess the potential and limitations of AI and Data Science in
-building more resilient, inclusive, and intelligent cities.",,
+building more resilient, inclusive, and intelligent cities.",,,1,INFO,3,EXT,0.2,,,,,INFO_EXT_New_3
 SocietyElectives,AI 491,AI Clinic,New,YES,"The AI clinic aims to become the go-to resource for assisting local Maryland
 governments and small organizations in their procurement processes for AI tools. The
 idea behind the AI Clinic is inspired by legal clinics present across many law schools in
@@ -168,43 +171,56 @@ makers on how to carry out their own AI evaluations, or training sessions for de
 makers and small organizations on how to use different types of AI tools, among others.","(Katie Shilton and I will be piloting this sometime in 2026. Funded via the
 Values-Centered AI initiative, UMD Grand Challenges. This could easily be an
 INST 4XX, but if there is interest, it could be made an AI course and potentially
-share it with the BA in AI)",
-SocietyRequired,INST 366,"Privacy, Security and Ethics for Big Data",Existing,YES,,,
-SocietyRequired,INST401 ,Design and Human Disability and Aging,Existing,YES,,Would be good to also have CS HCI as possible prereq,
-SocietyRequired,CMSC401,Algorithms for Geospatial Computing,Existing,YES,,,
-,,,,,,,
-SocietalElective,SOCY105,Understanding Contemporary Social Problems - Frameworks for Critical Thinking and Strategies for Solutions,Existing,YES,,,
-,,,,,,,
-SocietyElectives,PLCY201,Public Leaders and Active Citizens,Existing,,,,
-SocietyElectives,PLCY215,Innovation and Social Change: Creating Change for Good,Existing,,,,
-SocietyElectives,PLCY240,"Ethical, Policy and Social Implications for Science and Technology",Existing,,,,
-SocietyElectives,ENME 444,Assistive Robotics,Existing,,,,
-RoboticsElective,ENME  444,Assistive Robotics,Existing,,,,
-,,,,,,,
-RoboticsRequired,ENME 480,Introduction to Robotics,Existing,YES,"This course is an introductory course to the robotics minor and educates students in the elementary concepts of robotics. The topics covered in the course include mathematics of rigid motion, rotations, translations, homogeneous transformations, forward kinematics, inverse kinematics, velocity kinematics, geometric Jacobian, analytical Jacobian, motion planning, trajectory generation, independent joint control, linear control methods such as PD, PID, actuator dynamics, feedforward control for trajectory tracking, force control, basic computer vision concepts including thresholding, image segmentation, and camera calibration. This course also includes a laboratory component to be conducted in the Robot Realization Laboratory in the Engineering Annex Building.",Should allow 142 as prereq,
-RoboticsRequired,ENAE 450,Robotics Programming,Existing,YES,"This practical robotics class teaches practical skills to build, control, and deploy robotic systems. Interdisciplinary groups of students develop real-world robotic systems. The first 10 weeks of the lab are devoted to 5 pre-programmed experiments. The remainder of the lab is devoted to student projects. Students work in teams of 2, preferably with each student coming from a different background in engineering. There are 2 weekly lectures. The emphasis of the class is entirely on making a real robot do what you want it to do. In the first experiment, students perform a simple servomechanism experiment, where students control a single joint of a robot. We vary the weight on the movable rod to simulate the effects of the changing inertia due to outer segments moving. Next, we have the students directly control several joints of a robot arm. The third experiment is to control the position and orientation of the end effector. A fourth experiment deals with grasping. A fifth experiment deals with the position and orientation of a wheeled robot. ",,
-RoboticsRequired,CMSC 477,Robotics Perception and Planning,Existing,YES,"This course teaches the fundamentals of robot perception and robot path planning. The syllabus and course is divided into two segments, as per the major aspects involved in robotics. There will be lectures on (a) planning and control and (b) perception, with projects and homework. The syllabus includes the following: Motion Planning Introduction, Rigid Body Transformations, Velocity, Velocity Dynamics, Vehicle Controls, Graph Based Planning, Sampling Based Planning, Trajectory Planning, Navigation, Baeyesian and Kalman Filtering, Camera Model and Calibration, Projective Geometry, Visual Perception features, Optical Flow, Pose Estimation, 3D Velocities, Basics of Machine Learning, Structure from Motion, Visual Odometry, and Recognition and Learning. There are two examinations, 3 projects in multiple phases, and two homeworks. The class uses robots, mobile platforms with sensors and effectors. Drone experiments are done in simulation or in the Iribe Drone Lab, space permitting.",,
-RoboticsRequired,ENEE 467,Robotics Project Laboratory,Existing,YES,"This practical robotics class teaches practical skills to build, control, and deploy robotic systems. Interdisciplinary groups of students develop real-world robotic systems. The first 10 weeks of the lab are devoted to 5 pre-programmed experiments. The remainder of the lab is devoted to student projects. Students work in teams of 2, preferably with each student coming from a different background in engineering. There are 2 weekly lectures. The emphasis of the class is entirely on making a real robot do what you want it to do. In the first experiment, students perform a simple servomechanism experiment, where students control a single joint of a robot. We vary the weight on the movable rod to simulate the effects of the changing inertia due to outer segments moving. Next, we have the students directly control several joints of a robot arm. The third experiment is to control the position and orientation of the end effector. A fourth experiment deals with grasping. A fifth experiment deals with the position and orientation of a wheeled robot. ",,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-RoboticsElectives,CMSC 422,Intro to Machine Learning,Existing,YES,TEMP,,
-RoboticsElectives,CMSC 426,Image Processing,Existing,YES,TEMP,,
-RoboticsElectives,CMSC498E,Selected Topics in Computer Science; Robotics,Existing,YES,TEMP,,
-RoboticsRequired,AI 461,Multiagent Systems,New,YES,TEMP,,
-RoboticsElectives,AI 427,Reinforcement Learning,New,YES,TEMP,,
-,,,,,,,
-,,,,,,,
-AlgorithmsRequired,AI 461,Multiagent Systems,New,YES,TEMP,,
-AlgorithmsRequired,AI 427,Reinforcement Learning,New,YES,TEMP,,
-AlgorithmsRequired,CMSC 472,Introduction to Deep Learning,Existing,YES,TEMP,,
-AlgorithmsRequired,CMSC 422,Introduction to Machine Learning,Existing,YES,TEMP,,
-,,,,,,,
-,,,,,,,
-AlgorithmsElectives,AI 429,Multimodal Generation,Existing,YES,TEMP,,
-AlgorithmsElectives,CMSC 426,Computer Vision,Existing,YES,TEMP,,
-AlgorithmsElectives,CMSC 470,Natural Language Processing,Existing,YES,TEMP,,
-AlgorithmsElectives,CMSC 477,Robotics Perception and Planning,Existing,YES,TEMP,,
-AlgorithmsElectives,CMSC 401,Algorithms for Geospatial Computing,Existing,YES,TEMP,,
-AlgorithmsElectives,CMSC 454,Algorithms for Data Science,Existing,YES,TEMP,,
-AlgorithmsElectives,CMSC 426,Image Processing,Existing,YES,TEMP,,
+share it with the BA in AI)",,,,,,0.01875,,,,,
+SocietyRequired,INST 366,"Privacy, Security and Ethics for Big Data",Existing,YES,,,,1,INFO,3,EXT,0.2,,,,,INFO_EXT_Existing_3
+SocietyElectives,CMSC 474,Introduction to Computational Game Theorgy,Existing,,,,,,,,,,,,,,
+SocietyRequired,CMSC401,Algorithms for Geospatial Computing,Existing,YES,,,,1,CS,3,TTK,0.2,,,,,CS_TTK_Existing_3
+SocietyRequired,WGSS115,"Gender, Race, and Computing",Existing,YES,,,,1,WGSS,3,EXT,0.2,,,,,WGSS_EXT_Existing_3
+SocietyElectives,SOCY105,Understanding Contemporary Social Problems - Frameworks for Critical Thinking and Strategies for Solutions,Existing,YES,,,,,,,,,,,,,
+SocietyElectives,AMST260,American Culture in the Information Age,Existing,,,,,,,,,,,,,,
+SocietyElectives,AASP 441,"Science, Technology, and the Black Community",,,,," HIST255, AASP202, or AASP100; or permission of BSOS-African American Studies department.",,,,,,,,,,
+SocietyElectives,PLCY201,Public Leaders and Active Citizens,Existing,,,,,,,,,0.01875,,,,,
+SocietyElectives,PLCY215,Innovation and Social Change: Creating Change for Good,Existing,,,,,,,,,0.01875,,,,,
+SocietyElectives,PLCY240,"Ethical, Policy and Social Implications for Science and Technology",Existing,,,,,,,,,0.01875,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+RoboticsElectives,ENME  444,Assistive Robotics,Existing,,,,,,,,,0.03,,,,,
+,,,,,,,,,,,,,,,,,
+RoboticsRequired,ENME 480,Introduction to Robotics,Existing,YES,"This course is an introductory course to the robotics minor and educates students in the elementary concepts of robotics. The topics covered in the course include mathematics of rigid motion, rotations, translations, homogeneous transformations, forward kinematics, inverse kinematics, velocity kinematics, geometric Jacobian, analytical Jacobian, motion planning, trajectory generation, independent joint control, linear control methods such as PD, PID, actuator dynamics, feedforward control for trajectory tracking, force control, basic computer vision concepts including thresholding, image segmentation, and camera calibration. This course also includes a laboratory component to be conducted in the Robot Realization Laboratory in the Engineering Annex Building.",Should allow 142 as prereq,,1,ENG,3,EXT,0.2,,,,,ENG_EXT_Existing_3
+RoboticsRequired,ENAE 450,Robotics Programming,Existing,YES,"This practical robotics class teaches practical skills to build, control, and deploy robotic systems. Interdisciplinary groups of students develop real-world robotic systems. The first 10 weeks of the lab are devoted to 5 pre-programmed experiments. The remainder of the lab is devoted to student projects. Students work in teams of 2, preferably with each student coming from a different background in engineering. There are 2 weekly lectures. The emphasis of the class is entirely on making a real robot do what you want it to do. In the first experiment, students perform a simple servomechanism experiment, where students control a single joint of a robot. We vary the weight on the movable rod to simulate the effects of the changing inertia due to outer segments moving. Next, we have the students directly control several joints of a robot arm. The third experiment is to control the position and orientation of the end effector. A fourth experiment deals with grasping. A fifth experiment deals with the position and orientation of a wheeled robot. ",,,1,ENG,3,EXT,0.2,,,,,ENG_EXT_Existing_3
+RoboticsRequired,CMSC 477,Robotics Perception and Planning,Existing,YES,"This course teaches the fundamentals of robot perception and robot path planning. The syllabus and course is divided into two segments, as per the major aspects involved in robotics. There will be lectures on (a) planning and control and (b) perception, with projects and homework. The syllabus includes the following: Motion Planning Introduction, Rigid Body Transformations, Velocity, Velocity Dynamics, Vehicle Controls, Graph Based Planning, Sampling Based Planning, Trajectory Planning, Navigation, Baeyesian and Kalman Filtering, Camera Model and Calibration, Projective Geometry, Visual Perception features, Optical Flow, Pose Estimation, 3D Velocities, Basics of Machine Learning, Structure from Motion, Visual Odometry, and Recognition and Learning. There are two examinations, 3 projects in multiple phases, and two homeworks. The class uses robots, mobile platforms with sensors and effectors. Drone experiments are done in simulation or in the Iribe Drone Lab, space permitting.",,,1,CS,3,TTK,0.2,,,,,CS_TTK_Existing_3
+RoboticsRequired,ENEE 467,Robotics Project Laboratory,Existing,YES,"This practical robotics class teaches practical skills to build, control, and deploy robotic systems. Interdisciplinary groups of students develop real-world robotic systems. The first 10 weeks of the lab are devoted to 5 pre-programmed experiments. The remainder of the lab is devoted to student projects. Students work in teams of 2, preferably with each student coming from a different background in engineering. There are 2 weekly lectures. The emphasis of the class is entirely on making a real robot do what you want it to do. In the first experiment, students perform a simple servomechanism experiment, where students control a single joint of a robot. We vary the weight on the movable rod to simulate the effects of the changing inertia due to outer segments moving. Next, we have the students directly control several joints of a robot arm. The third experiment is to control the position and orientation of the end effector. A fourth experiment deals with grasping. A fifth experiment deals with the position and orientation of a wheeled robot. ",,,1,ENG,3,EXT,0.2,,,,,ENG_EXT_Existing_3
+RoboticsRequired,AI 461,Multiagent Systems,New,YES,TEMP,,,1,CS,3,TTK,0.2,,,,,CS_TTK_New_3
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+RoboticsElectives,CMSC 422,Intro to Machine Learning,Existing,YES,TEMP,,,,,,,,,,,,
+RoboticsElectives,CMSC 426,Image Processing,Existing,YES,TEMP,,,,,,,,,,,,
+RoboticsElectives,CMSC498E,Selected Topics in Computer Science; Robotics,Existing,YES,TEMP,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+RoboticsElectives,AI 427,Reinforcement Learning,New,YES,TEMP,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+AlgorithmsRequired,AI 461,Multiagent Systems,New,YES,TEMP,,,1,CS,3,TTK,0.2,,,,,CS_TTK_New_3
+AlgorithmsRequired,AI 427,Reinforcement Learning,New,YES,TEMP,,,1,CS,3,TTK,0.2,,,,,CS_TTK_New_3
+AlgorithmsRequired,CMSC 472,Introduction to Deep Learning,Existing,YES,TEMP,,,1,CS,3,TTK,0.2,,,,,CS_TTK_Existing_3
+AlgorithmsRequired,CMSC 422,Introduction to Machine Learning,Existing,YES,TEMP,,,1,CS,3,TTK,0.2,,,,,CS_TTK_Existing_3
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+AlgorithmsElectives,AI 429,Multimodal Generation,New,YES,TEMP,,,1,CS,4,TTK,0.04285714286,,,,,CS_TTK_New_4
+AlgorithmsElectives,CMSC 426,Computer Vision,Existing,YES,TEMP,,,,,,,,,,,,
+AlgorithmsElectives,CMSC 470,Natural Language Processing,Existing,YES,TEMP,,,,,,,,,,,,
+AlgorithmsElectives,CMSC 477,Robotics Perception and Planning,Existing,YES,TEMP,,,,,,,,,,,,
+AlgorithmsElectives,CMSC 401,Algorithms for Geospatial Computing,Existing,YES,TEMP,,,,,,,,,,,,
+AlgorithmsElectives,CMSC 454,Algorithms for Data Science,Existing,YES,TEMP,,,,,,,,,,,,
+AlgorithmsElectives,CMSC 426,Image Processing,Existing,YES,TEMP,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+AccessibilityRequired,WGSS 105,Introduction to Disability Studies,Existing,YES,,,,,,,,,,,,,
+AccessibilityRequired,CMSC 434,Introduction to Human-Computer Interaction,Existing,YES,,,,,,,,,,,,,
+AccessibilityRequired,INST 401 ,Design and Human Disability and Aging,Existing,YES,,Would be good to also have CS HCI as possible prereq,,1,INFO,3,EXT,0.2,,,,,INFO_EXT_Existing_3
+AccessibilityElectives,ENME 444,Assistive Robotics,Existing,,,, ENME351; and must have completed or be concurrently enrolled in ENME462,,,,,#N/A,,,,,
+AccessibilityElectives,CMSC 414,Computer and Network Security,Existing,,,,,,,,,,,,,,
+AccessibilityElectives,CMSC 471,Intro to Data Visualization,Existing,,,,,,,,,,,,,,
+AccessibilityElectives,CMSC 436,Programming Handheld Systems,Existing,,,,,,,,,,,,,,
+AccessibilityElectives,CMSC 470,Introduction to Natural Language Processing,Existing,,,,,,,,,,,,,,
+AccessibilityElectives,INST 362,User-Centered Design,Existing,,,,,,,,,,,,,,
+AccessibilityElectives,AMST 320,(Dis)ability in American Film,Existing,,,,,,,,,,,,,,
