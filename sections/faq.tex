@@ -1,6 +1,15 @@
 
 \question{Does DATA 250 provide enough of a foundation to satisfy both the linear algebra and discrete math requirements?}
 
+This course is part of the Data Science minor, and it is based on two pre-existing courses: CMSC 250 and
+Math 240. One difference is that this is one course instead of two. This course will focus on discrete
+mathematics and linear algebra that has applications to data science. 
+
+There are really two questions here.  
+\begin{itemize}
+    \item {\bf Does it have enough linear algebra?}  For that, the answer is fairly clearly yes.  While it's good to know what a nullity is and being able to do elimination, it's not strictly necessary for the downstream applications in \ai{}.
+    \item {\bf Does it have enough discrete math?}  Here there's a difference of opinion on the committee.  The consensus however is to follow the lead of the data science program (joint between CS and Math) and to accept the less thorough coverage of combinatorics of DATA 250, as it will cover the graph and proof elements of our more traditional discrete math course.  Of course students can always take the CS version, but this would be an additional overall course they'd have to take.
+\end{itemize}
 
 
 \question{Will this be an \abr{lep}?}
@@ -62,6 +71,19 @@ MATH 284 & Linear Algebra & Matrix operations \\
 \end{tabular}
 \end{center}
 
+\question{How will this impact upper-level CS elective enrollments?}
+
+This is complicated and impossible to predict with precision, but it might be helpful to break this into several categories.
+
+\begin{itemize}
+    \item {\bf Lower:} For some courses, the material will be covered in new lower-level courses earlier, so only the really interested students would take upper level \ai{} courses (Traditional AI and Neural Networks).  So those courses should see lower enrollments.
+    \item {\bf Uncertain:} For other courses, there are multiple factors at play.  While the increased number of students might increase enrollments (although this is complicated by the CS LEP being more stringent), we are offering many more electives that should distribute the load.  But given this is based on popularity, some courses might see increase enrollments.
+    \item {\bf Higher:} Despite that, for some courses that are now required within a specialization, the enrollments are likely going to be higher (e.g., Natural Language Processing).
+\end{itemize}
+
+However, one of the primary reasons for doing this is that we can do additional hiring to staff these upper level courses with TTK faculty.
+
+
 \question{What topics are covered in the \bscourse{216} course?}
 
 We plan to roughly follow the outline of \href{https://minitorch.github.io/}{this course} from Sasha Rush but focus more deeply on the lower-level implementation.
@@ -77,3 +99,10 @@ We plan to roughly follow the outline of \href{https://minitorch.github.io/}{thi
     \item Tensors and their layout in memory
     \item Efficient matrix multiplication
 \end{itemize}
+
+\question{These are an odd mix of topics for a course, why do they belong together?}
+
+The goal of this course is twofold.  First, students should understand the nuts and bolts of how these models are trained.  Both at the software level---the abstractions that instantiate abstract functions and generate derivatives from them---and the hardware level---how the operations are carried out on the \abr{gpu}.  But beyond that, students should understand the optimization of these models, which requires other skill sets.  Fortunately, this helps them better understand computer systems.
+
+There are two ways to optimize a model: make it faster or make it smaller (without sacrificing information).  Making it smaller requires using fewer bits per parameters, which requires understand computer representations of floating point numbers (and the disadvantages of quantization).  Making things faster requires understanding the memory layout of GPUs and how parallel computations can operate on the layout of matrices in GPU memory.
+
