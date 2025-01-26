@@ -262,6 +262,8 @@ def write_tables(raw_topics, raw_courses, topo):
             outfile.write(kHEADER)            
             for line in generate_latex_table(requirements, concentration):
                 outfile.write(line + "\n")
+            if concentration != "Core":
+                "Or other designated courses as approved by program administration."
 
     
 
@@ -289,14 +291,10 @@ def dependency_graph_from_df(courses_df: DataFrame, graph: Dict[str, Dict[str, I
     return graph
 
 def format_prereq_from_skills(prereq_to_print, skills, courses):
-
-    if len(skills[raw_topics.ID==prereq_to_print].Dependencies) == 0:
-        return prereq_to_print
     
     prereqs = defaultdict(set)
-    for prereq_set in skills[raw_topics.ID==prereq_to_print].Dependencies:
-        for prereq in prereq_set.split(","):
-            prereqs[prereq]
+    for prereq in prereq_to_print.split(","):
+        prereqs[prereq]
 
     for prereq in prereqs:
         for course in courses[courses.Skill==prereq].Course:
