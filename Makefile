@@ -10,3 +10,4 @@ main.pdf: course_source/core.csv course_source/courses.csv bs_in_ai_summary.py m
 	pdflatex main
 	pdflatex main
 	latex2html -split 0 main.tex
+	grep -h -v "2graysudo cat /etc/resolv.conf white" main/index.html > main/clean.html
