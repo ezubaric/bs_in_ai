@@ -20,6 +20,50 @@ kHEADER = """
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 """
 
+
+def write_budget_tables(source_file, output_file, table_columns={'Total Students': "Total Students",
+                                                                 'Num PTK': "\\abr{ptk} Faculty",
+                                                                 'TTK': "\\abr{ttk} Faculty",
+                                                                 'TA FTE': "\\abr{ta fte}",
+                                                                 'Budget': "Total Expenditures"}):
+    from csv import DictReader
+    budget_constants = defaultdict(dict)
+    with open(source_file, 'r') as infile:
+        raw = DictReader(infile)
+        for row in raw:
+            val = row["Value"]
+            if "$" in val:
+                val = val.replace("$", "\$")
+            if row['Year']:
+                year = int(row['Year'])
+                budget_constants[row["Constant"]][str(year)] = val
+            else:                
+                budget_constants[row["Constant"]] = val
+
+    
+    header = "\\toprule" + "\t&".join(["\\textbf{Year}"] + list(table_columns.values()))
+    header += "\\\\ \n \\midrule \n"
+    lines = []
+    for year in [str(x) for x in range(1, 6)]:
+        lines.append(" &\t".join([year] + [budget_constants[x][year] for x in table_columns]))
+    lines.append("\\bottomrule")
+    
+    with open(output_file, 'w') as outfile:
+        for key in budget_constants:
+            if key not in table_columns and key:
+                outfile.write("\\newcommand{\\%s}[0]{%s}\n" % (key.replace(" ", ""), str(budget_constants[key])))
+        outfile.write("\\begin{table}\n")
+        outfile.write("\\begin{center}\n")
+        outfile.write("\\begin{tabular}{lrrrrr}\n")
+        outfile.write(header)
+        outfile.write("\t\\\\ \n".join(lines))
+        outfile.write("\n\\end{tabular}\n")
+        outfile.write("\\end{center}\n")
+        outfile.write("\\label{tab:budget}\n")
+        outfile.write("\\end{table}\n")        
+    return budget_constants
+    
+
 def extract_dependencies_and_sort(graph: Dict[str, Union[str, Iterable[str]]]) -> Iterable[Iterable[str]]:
     temp_graph = {}
 
@@ -428,3 +472,5 @@ if __name__ == "__main__":
     write_tables(raw_topics, raw_courses, topo)
 
     generate_readable_courses(raw_courses, raw_topics)
+
+    write_budget_tables("course_source/budget.csv", "tables/budget.tex")
