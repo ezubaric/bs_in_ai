@@ -233,10 +233,13 @@ class Requirement:
 
         courses = []
         for course, status in zip(self.courses, self.statuses):
-            if status.lower() == "new":
-                courses.append("\\textit{%s}" % course)
-            else:
-                courses.append(course)
+            try:
+                if status.lower() == "new":
+                    courses.append("\\textit{%s}" % course)
+                else:
+                    courses.append(course)
+            except AttributeError:
+                print("Problem parsing %s" % str(course))
 
 
         

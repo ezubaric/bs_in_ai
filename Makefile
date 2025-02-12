@@ -1,4 +1,9 @@
 
+copy_courses: 
+	mv ~/Downloads/AI\ BS\ Courses\ -\ Skills.csv course_source/core.csv
+	mv ~/Downloads/AI\ BS\ Courses\ -\ Courses.csv course_source/courses.csv
+	mv ~/Downloads/AI\ BS\ Courses\ -\ Budget\ Assumptions.csv course_source/budget.csv
+
 clean:
 	rm course_descriptions/*
 	rm requirements/*.tex
