@@ -23,29 +23,29 @@ TTK Load,1.5,
 Message,Don't edit below this line --- automatically generated,
 ,,
 ,,
-Budget,"$4,520,929",1
-Budget,"$4,545,014",2
-Budget,"$4,528,937",3
-Budget,"$1,991,642",4
-Budget,"$4,784,139",5
+Budget,"$4,705,461",1
+Budget,"$8,864,204",2
+Budget,"$12,494,336",3
+Budget,"$13,842,197",4
+Budget,"$14,278,798",5
 ,,
 ,,
 ,,
-Faculty,6.7,1
-Faculty,5.0,2
-Faculty,2.7,3
-Faculty,-5.7,4
-Faculty,1.7,5
+Faculty,7.3,1
+Faculty,16.3,2
+Faculty,23.3,3
+Faculty,25.0,4
+Faculty,25.0,5
 ,,
 ,,
 ,,
 ,,
 ,,
-TTK,4.7,1
-TTK,0.0,2
-TTK,-5.3,3
-TTK,-14.7,4
-TTK,-7.3,5
+TTK,5.3,1
+TTK,11.3,2
+TTK,15.3,3
+TTK,16.0,4
+TTK,16.0,5
 ,,
 ,,
 New Students,150,1
@@ -62,8 +62,8 @@ Total Students,1050,4
 Total Students,1200,5
 ,,
 ,,
-TA FTE,16.0,1
-TA FTE,19.3,2
-TA FTE,20.5,3
-TA FTE,15.3,4
-TA FTE,24.5,5
+TA FTE,16.5,1
+TA FTE,37.5,2
+TA FTE,52.5,3
+TA FTE,60.0,4
+TA FTE,60.3,5

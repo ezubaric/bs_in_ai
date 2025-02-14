@@ -33,7 +33,7 @@ def write_budget_tables(source_file, output_file, table_columns={'Total Students
         for row in raw:
             val = row["Value"]
             if "$" in val:
-                val = val.replace("$", "\$")
+                val = val.replace("$", "\\$")
             if row['Year']:
                 year = int(row['Year'])
                 budget_constants[row["Constant"]][str(year)] = val
