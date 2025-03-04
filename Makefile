@@ -16,5 +16,6 @@ main.pdf: course_source/core.csv course_source/courses.csv bs_in_ai_summary.py m
 	pdflatex main
 	pdflatex main
 	pdflatex qualifications
+	pdflatex los
 	latex2html -split 0 main.tex
 	grep -h -v '25white' main/index.html > main/clean.html
