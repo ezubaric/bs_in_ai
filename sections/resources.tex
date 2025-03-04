@@ -1,11 +1,13 @@
-\newcommand{\ttkfaculty}{5--10}
+
 \newcommand{\advisors}{5}
 \newcommand{\admin}{1}
 \newcommand{\cloud}{30k}
 \newcommand{\upfrontcluster}{788k}
 \newcommand{\continuingcluster}{100k}
 
+\ifbudget
 \input{tables/budget}
+\fi
 
 \subsection{Library Assessment}
 
@@ -24,11 +26,11 @@ Short term, most of the instruction will take place in Iribe or the Computer Sci
 
 \bsaicommittee{Because the new program will increase enrollments across multiple units, we are also requesting additional support for teaching assistants to support the 1300 additional seats needed in courses in the first year rising to 3000 in the fifth year of the program.}
 
-\csamend{The BS in AI is expected to grow to an enrollment of 1,200 majors over five years. To teach the required course sections, 16 FTE TTK faculty and 9 FTE PTK faculty will be hired over five years. The new TTK faculty will be recruited with joint appointments between AIM and relevant tenure homes. The new PTK faculty will be hired into the units offering the respective course sections, including AIM, Computer Science and others.}
+{The BS in AI is expected to grow to an enrollment of 1,200 majors over five years. To teach the required course sections, FTE TTK faculty and FTE PTK faculty will be hired over five years. The new TTK faculty will be recruited with joint appointments between AIM and relevant tenure homes. The new PTK faculty will be hired into the units offering the respective course sections, including computer science, math, information science, and others.
 
-\csamend{Because the new program will increase enrollments across multiple units, we are also requesting additional support for Teaching Assistants rising to 60.5 FTE Graduate Assistants to support the expected 3000 seats per semester in the fifth year of the program.}
+Because the new program will increase enrollments across multiple units, we are also requesting additional support for Teaching Assistants to support the expected 3000 seats per semester in the fifth year of the program.
 
-\csamend{The program will request to receive Differential Tuition to partially offset the cost of Teaching Assistants. Differential Tuition will be routed to AIM, which will use it to fund TAs in the BS in AI under the direction of the Academic Director of the program. Additional Teaching Assistants may be funded by the regular program budget as necessary.}
+The program will request to receive Differential Tuition to partially offset the cost of Teaching Assistants. Differential Tuition will be routed to AIM, which will use it to fund TAs in the BS in AI under the direction of the Academic Director of the program. Additional Teaching Assistants may be funded by the regular program budget as necessary.
 
 In addition, we are requesting \$\upfrontcluster{} for expanding the existing Nexus high performance computing cluster for instructional needs and \$\continuingcluster{} per year to maintain the cluster.  This will:
 \begin{itemize}
@@ -42,10 +44,11 @@ Because not all AI models can be run or trained locally on UMD infrastructure, w
 
 \subsection{Administrative and Advising Resources}
 
-\bsaicommittee{In conjunction with the BA in AI, We are requesting one administrative position and \advisors{} advisors.  And a full-time technical staff member to coordinate technical resources.}
+Based on expected market demand, we project an enrollment of 1,200 in this program after five years. To manage a program of this size, we are requesting one administrative leadership position at the rank of an Assistant Program Director. Academic advising will be provided by a team of five academic advisors including an Assistant Director leading the team. In addition, a full time technical staff member who will coordinate technical resources is needed. 
 
-\csamend{Based on expected market demand, we project an enrollment of 1,200 in this program after five years. To manage a program of this size, we are requesting one administrative leadership position at the rank of an Assistant Program Director. Academic advising will be provided by a team of five academic advisors including an Assistant Director leading the team. In addition, a full time technical staff member who will coordinate technical resources is needed. }
-
+\ifbudget
 \subsection{Financial Tables}
 
 The full budgets are attached in CourseLeaf, but the summary of the anticipated expenditures are summarized in Table~\ref{tab:budget}.  These numbers are based on an assumption of \StudentsperSection{} students in a section and \StudentsperTA{} students per \abr{ta}.  We assume that \abr{ptk} faculty would teach on average \PTKLoad{} courses per year and that \abr{ttk} faculty would teach on average \TTKLoad{} courses per year.\footnote{This is an interdisciplinary program, and different units have different expectations, but this is based on an assumption that \abr{cs} faculty would teach more \abr{ai}-relevant courses than other units.}
+
+\fi

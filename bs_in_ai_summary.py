@@ -59,6 +59,7 @@ def write_budget_tables(source_file, output_file, table_columns={'Total Students
         outfile.write("\t\\\\ \n".join(lines))
         outfile.write("\n\\end{tabular}\n")
         outfile.write("\\end{center}\n")
+        outfile.write("\\caption{Budget projections for the program.}\n")
         outfile.write("\\label{tab:budget}\n")
         outfile.write("\\end{table}\n")        
     return budget_constants
@@ -265,7 +266,7 @@ def generate_latex_table(requirements, concentration):
 
     yield "\\rowcolors{2}{gray!25}{white}"
     yield "\\begin{longtable}{p{7cm}>{\\raggedleft\\arraybackslash}p{7cm}}"
-    yield "Topic & Courses \\\\"
+    yield "Course Subject & Courses \\\\"
     yield "\\toprule"
     
     for requirement in requirements:
