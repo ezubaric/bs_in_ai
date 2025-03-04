@@ -385,6 +385,8 @@ def latex_format_course(values, skills, courses, remove_empty_description=False)
             prereq_string = list(skills[skills.ID == skill].Dependencies)[0]
             if prereq_string == "ROOT":
                 prereq_string = ""
+            elif "and" in prereq_string.lower():
+                prereq_string = prereq_string.upper()
             elif "," in prereq_string:
                 # Removed the label because it was too much work to expand it
                 prereq_string = "(" + ") AND (".join(format_prereq_from_skills(x, skills, courses) for x in prereq_string.split(",")) + ")"
@@ -394,8 +396,9 @@ def latex_format_course(values, skills, courses, remove_empty_description=False)
         else:    
             prereq_string = ""
 
-    if prereq_string != "":
+    if prereq_string != "" and "()" not in prereq_string:
         value += " Prereqs: %s" % prereq_string
+
 
     return value
     
