@@ -385,7 +385,9 @@ def latex_format_course(values, skills, courses, remove_empty_description=False)
             if prereq_string == "ROOT":
                 prereq_string = ""
             elif "," in prereq_string:
-                prereq_string = "(" + ") AND (".join("%s: " % x + format_prereq_from_skills(x, skills, courses) for x in prereq_string.split(",")) + ")"
+                # Removed the label because it was too much work to expand it
+                prereq_string = "(" + ") AND (".join(format_prereq_from_skills(x, skills, courses) for x in prereq_string.split(",")) + ")"
+                # prereq_string = "(" + ") AND (".join("%s: " % x + format_prereq_from_skills(x, skills, courses) for x in prereq_string.split(",")) + ")"
             else:
                 prereq_string = format_prereq_from_skills(prereq_string, skills, courses)
         else:    

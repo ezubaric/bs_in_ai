@@ -54,14 +54,6 @@ BCOR5mm, % Binding correction
 %	HEADERS
 %----------------------------------------------------------------------------------------
 
-%\newcommand{\csamend}[1]{{\textcolor{green}{ #1}}}
-\newcommand{\csamend}[1]{{#1}}
-%\newcommand{\bsaicommittee}[1]{{\textcolor{blue}{#1}}}
-\newcommand{\bsaicommittee}[1]{}
-\newcommand{\prefix}{CSAI}
-
-\newcommand{\added}[1]{{\color{NavyBlue}{{}ADDED: #1}}}
-
 \renewcommand{\sectionmark}[1]{\markright{\spacedlowsmallcaps{#1}}} % The header for all pages (oneside) or for even pages (twoside)
 %\renewcommand{\subsectionmark}[1]{\markright{\thesubsection~#1}} % Uncomment when using the twoside option - this modifies the header on odd pages
 \lehead{\mbox{\llap{\small\thepage\kern1em\color{halfgray} \vline}\color{halfgray}\hspace{0.5em}\rightmark\hfil}} % The header style
@@ -126,7 +118,21 @@ BCOR5mm, % Binding correction
 
 \section{Requirements}
 
+In listing requirements for the proposed program we use \prefix{} to
+refer to all courses even those also developed for the BA in AI (which
+uses the prefix HCAI) to
+reduce confusion (e.g., we would envision these shared courses to be crosslisted).
+
 \input{requirements/Core}
+
+\textbf{ * Sampler}: Courses that expose students to applications of \ai{}
+across the curriculum, allowing them to explore new interests that
+might encourage them to explore new research paths or to help them
+pick a specialization.
+
+\subsection{Topics Covered in the Core}
+
+\input{sections/topics}
 
 \subsection{General}
 
@@ -148,7 +154,9 @@ Students are required to complete a capstone project that would combine \ai{} wi
 
 \subsection{Specialization: AI, Society, and Decision Making}
 
-This specialization equips students with a strong technical foundation in \ai{} emphasizing ethical considerations, policy, and \ai{} in governance and social systems.
+This specialization equips students with a strong technical foundation
+in \ai{} emphasizing ethical considerations, policy, and \ai{} in
+governance and social systems.  
 
 \input{requirements/Society}
 
@@ -164,11 +172,11 @@ This specialization addresses questions of equity and digital accessibility rela
 
 \input{requirements/Accessible}
 
-\subsection{Specialization: Robotics}
+%\subsection{Specialization: Robotics}
 
-NB: We have not heard back from engineering on this, so this specialization is likely going to not be in the final proposal.  However, we list it here for completeness in case it does make it in. 
+%NB: We have not heard back from engineering on this, so this specialization is likely going to not be in the final proposal.  However, we list it here for completeness in case it does make it in. 
 
-\input{requirements/Robotics}
+%\input{requirements/Robotics}
 
 
 \section{Program Information}
@@ -194,6 +202,7 @@ NB: We have not heard back from engineering on this, so this specialization is l
 
 
 \section{Learning Outcomes}
+\label{sec:learning-outcomes}
 
 \input{sections/learning_outcomes}
 
@@ -294,5 +303,7 @@ In this section, we list the courses used anywhere in the proposal.  The section
 % \bibliography{sample.bib} % The file containing the bibliography
 
 %----------------------------------------------------------------------------------------
+
+\input{sections/los}
 
 \end{document}

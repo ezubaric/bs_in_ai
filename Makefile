@@ -12,6 +12,7 @@ clean:
 
 main.pdf: course_source/core.csv course_source/courses.csv bs_in_ai_summary.py main.tex
 	./venv/bin/python3 bs_in_ai_summary.py
+	pdflatex los
 	pdflatex main
 	pdflatex main
 	pdflatex qualifications
