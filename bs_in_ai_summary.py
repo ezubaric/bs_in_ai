@@ -231,6 +231,12 @@ class Requirement:
         else:
             line = "\\textbf{%s} [%i Credits]" % (self.name, self.credit)
 
+        # If you have to take all the courses, say "and" here
+        if len(self.courses) == self.requirement:
+            join = "and"
+        else:
+            join = "or"
+            
         courses = []
         for course, status in zip(self.courses, self.statuses):
             try:
@@ -241,12 +247,13 @@ class Requirement:
             except AttributeError:
                 print("Problem parsing %s" % str(course))
 
-
-        
+                
         if len(courses) == 2:
-            course_list = " or ".join(courses)
+            conjunction = " %s " % join
+            course_list = conjunction.join(courses)
         elif len(courses) > 2:
-            course_list = ", ".join(courses[:-1]) + ", or " + courses[-1]
+            conjunction = ", %s " % join
+            course_list = ", ".join(courses[:-1]) + conjunction + courses[-1]
         else:
             course_list = ", ".join(courses)
             
